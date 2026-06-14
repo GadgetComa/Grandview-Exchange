@@ -27,3 +27,35 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch(err => console.error("Error building navigation element: ", err));
   }
 });
+
+/* ============================================================
+   GOOGLE ANALYTICS 4 (GA4) INTEGRATION
+   Centralized tracker script injection for site analytics
+============================================================ */
+(function() {
+  const GA_TRACKING_ID = 'G-M60J5ZZH97'; // Replace with your Google Analytics ID
+
+  // 1. Create and inject the external Google Analytics script tag
+  const gaScript = document.createElement('script');
+  gaScript.async = true;
+  gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+  document.head.appendChild(gaScript);
+
+  // 2. Initialize the globaldataLayer and gtag configurations
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function() { dataLayer.push(arguments); };
+  
+  gtag('js', new Date());
+
+  // 3. Fire a pageview event configured to read your tracking ID
+  gtag('config', GA_TRACKING_ID, {
+    page_path: window.location.pathname
+  });
+})();
+
+/* ============================================================
+   GLOBAL NAVIGATION LOADER (Your Existing Navigation Code)
+============================================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  // ... Keep all your existing site-nav script logic here untouched ...
+});
