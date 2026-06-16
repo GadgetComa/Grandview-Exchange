@@ -221,8 +221,15 @@
 				initialView: 'listMonth',
 				height: 'auto',
 
-				// 1. Force FullCalendar to anchor the focus on today's real-time system date
+				// 1. Force the engine to anchor directly to today's date structure
 				initialDate: new Date(),
+
+				// 2. CRITICAL FIX: Explicitly restrict the list view from looking backward into historical years
+				validRange: function(nowDate) {
+					return {
+						start: nowDate // Prevents the view from automatically snapping backwards before today!
+					};
+				},
 
 				headerToolbar: {
 					left: 'prev',
@@ -234,17 +241,17 @@
 					next: 'Next >'
 				},
 
-				// 2. REWRITTEN: Ensure the layout navigation controls NEVER hide on the screen
+				// 3. REWRITTEN: Ensure layout controls are cleanly forced to 'flex' so toolbar stays visible
 				viewDidMount: function(info) {
 					const toolbar = document.querySelector('.fc-header-toolbar');
 					if (toolbar) {
-						toolbar.style.display = 'flex !important';
 						toolbar.style.setProperty('display', 'flex', 'important');
 					}
 				},
 
 				googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
 				eventSources: Object.values(eventSourceConfigs),
+
 
 				eventClick: function(info) {
 					info.jsEvent.preventDefault();
