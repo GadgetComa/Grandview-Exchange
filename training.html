@@ -2,98 +2,98 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Grandview Exchange – Training</title>
+	<meta charset="UTF-8">
+	<title>Training Options – Grandview Exchange</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/global.js" defer></script>
 </head>
 
 <body class="help-site">
 
-	<!-- HEADER IMAGE -->
+	<!-- Site Banner -->
 	<header class="site-header">
-		<img src="assets/img/coverphoto.png" alt="Grandview Exchange — Connecting Our Community" />
+		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
 	</header>
 
 	<div class="site-shell">
 
-		<!-- NAVIGATION -->
+		<!-- GLOBAL NAV INCLUDE -->
 		<div id="site-nav"></div>
 
-		<script>
-			fetch('/includes/site-nav.html')
-				.then(r => r.text())
-				.then(html => {
-					document.getElementById('site-nav').innerHTML = html;
-
-					const title = document.title.replace(' – Grandview Exchange', '');
-					document.querySelector('.current-page').textContent = title;
-				});
-		</script>
-
-		<!-- HERO BOX -->
-		<section class="section">
-			<div class="card card-hero">
-				<h1>Grandview Exchange Training Opportunities</h1>
-				<p>
-					Learn how to use Grandview Exchange with confidence. Whether you're brand new or want help with specific
-					features, we offer two types of training opportunities.
-				</p>
-			</div>
+		<!-- Standardized Introduction Header Block Layout -->
+		<section class="page-intro-summary">
+			<h1>Training Options for Grandview Exchange</h1>
+			<p class="lead-text">
+				Learn how to use Grandview Exchange with confidence. Whether you're brand new or want help with specific
+				features, we offer two types of training opportunities.
+			</p>
 		</section>
 
-		<!-- TRAINING OPTIONS -->
-		<section class="section">
-			<div class="card card-light">
+		<!-- Balanced Two-Column Structural Shell Wrapper -->
+		<div class="main-layout-wrapper">
 
-				<div class="card-body card-body-center">
+			<!-- Column Track 1: Main Content Container Frame (Aligned Left) -->
+			<main class="main-content-area rich-text-area">
+				<section class="section-block">
+
 					<h2>Training Options</h2>
-				</div>
+					<p class="section-desc">
+						Choose one of the training options shown below.
+					</p>
 
-				<div class="grid grid-2col">
+					<div class="grid grid-1col">
 
-					<!-- INTRODUCTION TO GRANDVIEW EXCHANGE -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Introduction to Grandview Exchange</div>
-							<div class="card-desc">
+						<!-- APP -->
+						<div class="section-item-row">
+							<h3 class="section-item-title">Introduction to Grandview Exchange</h3>
+							<div class="section-item-desc">
 								Introductory training sessions for Grandview Exchange are scheduled periodically. As of May 15, 2026, no
 								sessions are planned, but more will be coming soon.
 								Announcements of new sessions will be made on Grandview Exchange and listed on the My Erickson Activity
-								Calendar.
-							</div>
+								Calendar.</div>
+							<a class="section-item-action" href="coming-soon.html">Coming soon</a>
 						</div>
 
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-secondary btn-disabled btn-card" tabindex="-1" aria-disabled="true">
-								Coming Soon
-							</a>
-						</div>
-					</div>
-
-					<!-- HANDS-ON TRAINING -->
-					<div class="card">
-						<div class="card-body">
-							<div class="card-title">Hands-On Training</div>
-							<div class="card-desc">
+						<!-- BROWSER -->
+						<div class="section-item-row">
+							<h3 class="section-item-title">Hands-On Training</h3>
+							<div class="section-item-desc">
 								You can sign up for a 15‑minute hands‑on help session to get started or get past obstacles preventing
 								you from taking full advantage of the site.
 							</div>
+
+							<a class="section-item-action" href="https://calendar.app.google/SMqEUDAJcNxaynwR6"> Sign Up for Hands‑On Training →</a>
 						</div>
 
-						<div class="card-actions card-actions-center">
-							<a class="btn btn-card" href="https://calendar.app.google/SMqEUDAJcNxaynwR6" target="_blank">
-								Sign Up for Hands‑On Training
-							</a>
-						</div>
-					</div>
 
-				</div><!-- end grid -->
 
-			</div><!-- end card-light -->
-		</section>
+					</div><!-- end grid -->
+				</section>
+			</main>
+
+			<!-- Column Track 2: Sidebar Container Frame (Aligned Right) -->
+			<aside class="site-sidebar section-block">
+				<h2 class="sidebar-heading">Related Links</h2>
+				<p class="sidebar-intro">Links to additional information to help you get started.</p>
+
+				<div class="sidebar-item">
+					<h3>Grandview Help Center</h3>
+					<p>Return to the home hub for clean step-by-step walk-throughs, navigation grids, and resources.</p>
+					<a class="sidebar-link" href="help-center-home.html">Open Help Center →</a>
+				</div>
+
+				<!-- Direct Site Access Block -->
+				<div class="sidebar-item">
+					<h3>Grandview Exchange Website</h3>
+					<p>Visit our online community hub directly via your computer or tablet internet browser.</p>
+					<a class="sidebar-link" href="https://grandviewexchange.groups.io/g/Home" target="_blank">Visit Website →</a>
+				</div>
+			</aside>
+
+		</div><!-- end main-layout-wrapper -->
 
 	</div><!-- end site-shell -->
 
