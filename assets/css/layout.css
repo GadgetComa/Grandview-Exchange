@@ -202,3 +202,28 @@
   color: var(--text-muted);
   margin: 0;
 }
+
+/* ============================================================
+   Global Informational Layout & Spacing System
+============================================================ */
+
+/* Add clean spacing below interior item descriptions */
+.rich-text-area .section-item-desc {
+  margin-bottom: var(--space-md);
+}
+
+/* Ensure bulleted lists match identical spacing and indentation */
+.rich-text-area ul {
+  margin: 0 0 var(--space-md) 0;
+  padding-left: var(--space-lg);
+}
+
+.rich-text-area ul li {
+  line-height: 1.5;
+}
+
+/* Forces the card's thin divider border to render below the main top description */
+.rich-text-area .section-desc + .grid .section-item-row:first-of-type {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
+}
