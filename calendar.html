@@ -65,9 +65,11 @@
 					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="canasta" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Canasta Club</label>
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="history" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> History Club</label>
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
 						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker
@@ -129,9 +131,11 @@
 			const subscribeLinks = {
 				grandview: 'grandviewexchangecalendar@gmail.com',
 				bocce: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
+				canasta: '1003797145e3953c6d994664a6bbd64cf544ae705857d1e9610d1d4858621488@group.calendar.google.com',
 				caregiver: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
-				fitness: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
 				itclub: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+				fitness: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
+				history: 'e6b52ca8f8bbb723d82bcffff25d666c9c5fd1f858af8c04acc261e6a097642d@group.calendar.google.com',
 				mahjongg: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
 				ressvcs: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
 				speaker: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
@@ -180,20 +184,30 @@
 					googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
 					color: '#2a5b8a'
 				},
+				canasta: {
+					id: 'canasta'
+					googleCalendarId: '1003797145e3953c6d994664a6bbd64cf544ae705857d1e9610d1d4858621488@group.calendar.google.com'
+					color: '#c8922a'
+				}
 				caregiver: {
 					id: 'caregiver',
 					googleCalendarId: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
 					color: '#b84a4a'
+				},
+				itclub: {
+					id: 'itclub',
+					googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+					color: '#c8922a'
 				},
 				fitness: {
 					id: 'fitness',
 					googleCalendarId: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
 					color: '#3f7d4e'
 				},
-				itclub: {
-					id: 'itclub',
-					googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
-					color: '#c8922a'
+				history: {
+					id: 'history'
+					googleCalendarId: 'e6b52ca8f8bbb723d82bcffff25d666c9c5fd1f858af8c04acc261e6a097642d@group.calendar.google.com'
+					color: '#7a4f8e'
 				},
 				mahjongg: {
 					id: 'mahjongg',
@@ -353,9 +367,11 @@
 				<select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
 					<option value="grandview">Grandview Events</option>
 					<option value="bocce">Bocce</option>
+					<option value="canasta">Canasta</option>
 					<option value="caregiver">Caregiver Support</option>
-					<option value="fitness">Fitness</option>
 					<option value="itclub">Computer/IT Club</option>
+					<option value="fitness">Fitness</option>
+					<option value="history">History</option>
 					<option value="mahjongg">Mah Jongg Club</option>
 					<option value="ressvcs">Resident Services</option>
 					<option value="speaker">Speaker Series</option>
