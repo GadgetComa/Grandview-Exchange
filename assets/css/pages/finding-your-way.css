@@ -115,3 +115,8 @@
   align-items: center;
   justify-content: center;
 }
+/* Extra spacing for the initial home page layout presentation block */
+.home-screenshot-space {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}

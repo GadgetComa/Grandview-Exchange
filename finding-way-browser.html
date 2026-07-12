@@ -23,8 +23,8 @@
         <div id="site-nav"></div>
         
         <section class="page-intro-summary">
-            <h1>Finding Your Way Around Using a Browser</h1>
-            <p class="section-desc">A visual guide to understanding and navigating the Grandview Exchange layout via your web browser.</p>
+            <h1>Where Am I?</h1>
+            <p class="section-desc">Here's how to get your bearings and find the group's messages.</p>
         </section>
 
         <!-- Balanced Two-Column Structural Desktop Frame -->
@@ -34,22 +34,23 @@
             <main class="main-content-area guide-container">
                 <article class="section-block">
                     
-                    <!-- Section 1: Home Page Partial Frame -->
-                    <div class="text-center">
-                        <div class="screenshot-wrapper">
-                            <!-- Updated path to assets/img/home-page.png -->
-                            <img src="assets/img/home-page.png" alt="Grandview Exchange Welcome Portal Header" class="border-shadow" />
-                        </div>
-                        
-                        <p>If the page you see looks like the one above, you’re on the <strong>Home Page</strong>.</p>
+                    <!-- Section 1: Home Page Context -->
+                    <div>
+                        <p>If the page you see looks like the one below, you’re on the <strong>Home Page</strong>.</p>
                         <p>This page gives you general information about the group, including a welcome message and links to different sections.</p>
                         <p>To view and read the group’s messages, you should go to the Messages page. Click or tap <strong>Messages</strong> on the left side of the page.</p>
                         
                         <div class="alert-small-window">
                             <strong>If you don’t see the links on the left:</strong> your browser window may be too small. Click the three horizontal lines at the bottom‑right corner of the page to open the menu and reveal the list of links.
                         </div>
+
+                        <!-- Cleaned: Applied our new CSS class, no inline styles allowed -->
+                        <div class="screenshot-wrapper text-center home-screenshot-space">
+                            <img src="assets/img/home-page.png" alt="Grandview Exchange Welcome Portal Header" class="border-shadow" />
+                        </div>
                     </div>
 
+                    <!-- Clean Horizontal Divider -->
                     <hr class="section-divider" />
 
                     <!-- Section 2: Messages Page & Mapping Coordinates -->
@@ -57,7 +58,6 @@
                         <p>If the page you see looks like the one below, you’re on the <strong>Messages Page</strong>. This is where you read messages, post new ones, and reply to others. Below, you’ll find an explanation of each part of the page.</p>
                         
                         <div class="annotated-map-container">
-                            <!-- Updated path to assets/img/messages-page.png -->
                             <img src="assets/img/messages-page.png" alt="Grandview Exchange Activity Grid Explanations" class="main-screenshot" />
                             
                             <!-- Absolute coordinate layout pins handled by pages/finding-your-way.css -->
@@ -70,7 +70,7 @@
 
                     <!-- Section 3: Document Explanations Legend List -->
                     <div class="guide-legend-list">
-                        <h3>Page Layout Explanations</h3>
+                        <h3>What's on the Page</h3>
                         <dl class="legend-dl">
                             
                             <dt><span class="list-badge">1</span> Navigation Sidebar Menu</dt>
