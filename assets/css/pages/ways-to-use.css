@@ -4,7 +4,7 @@
 
 /* Add clean spacing below each option title */
 .ways-to-use-area .section-item-desc {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 /* Clear list parameters to ensure consistent padding structures */
