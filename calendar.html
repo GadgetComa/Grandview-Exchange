@@ -119,10 +119,7 @@
 							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
 								type="checkbox" class="cal-toggle" data-cal="mahjongg" checked
 								style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
-						<label
-							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
-								type="checkbox" class="cal-toggle" data-cal="mobility" checked
-								style="width: 16px; height: 16px; accent-color: var(--teal);"> Mobility Club</label>
+
 						<label
 							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
 								type="checkbox" class="cal-toggle" data-cal="ressvcs" checked
@@ -133,6 +130,10 @@
 								style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker
 							Presentation</label>
 						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="mobility" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Transportation
+							Club</label><label
 							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
 								type="checkbox" class="cal-toggle" data-cal="tvclub" checked
 								style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
@@ -212,9 +213,9 @@
 				interest: '109ee78a6f713cf7f2c33aed20f96dac6c31c7c159d873e45b7c2180bba64d5d@group.calendar.google.com',
 				kcart: 'msknbko5rg50vkf4dobndrd7gs8ucs55@import.calendar.google.com',
 				mahjongg: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
-				mobility: 'cbsm17e3g2mvn0g80ogdlmo13o6qfrn2@import.calendar.google.com',
 				ressvcs: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
 				speaker: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
+				mobility: 'cbsm17e3g2mvn0g80ogdlmo13o6qfrn2@import.calendar.google.com',
 				tvclub: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com'
 			};
 
@@ -305,11 +306,6 @@
 					googleCalendarId: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
 					color: '#0080000'
 				},
-				mobility: {
-					id: 'mobility',
-					googleCalendarId: 'cbsm17e3g2mvn0g80ogdlmo13o6qfrn2@import.calendar.google.com',
-					color: '#FF8C00'
-				},
 				ressvcs: {
 					id: 'ressvcs',
 					googleCalendarId: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
@@ -319,6 +315,11 @@
 					id: 'speaker',
 					googleCalendarId: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
 					color: '#808000'
+				},
+				mobility: {
+					id: 'mobility',
+					googleCalendarId: 'cbsm17e3g2mvn0g80ogdlmo13o6qfrn2@import.calendar.google.com',
+					color: '#FF8C00'
 				},
 				tvclub: {
 					id: 'tvclub',
@@ -551,6 +552,7 @@
 					<option value="mahjongg">Mah Jongg Club</option>
 					<option value="ressvcs">Resident Services</option>
 					<option value="speaker">Speaker Series</option>
+					<option value="mobility">Transportation Club</option>
 					<option value="tvclub">TV Club</option>
 				</select>
 			</div>
