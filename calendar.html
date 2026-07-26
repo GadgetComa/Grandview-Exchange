@@ -88,6 +88,10 @@
 								style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
 						<label
 							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="books" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Book Clubs</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
 								type="checkbox" class="cal-toggle" data-cal="canasta" checked
 								style="width: 16px; height: 16px; accent-color: var(--teal);"> Canasta Club</label>
 						<label
@@ -205,6 +209,7 @@
 				grandview: 'grandviewexchangecalendar@gmail.com',
 				arts: '2bb13c5b1b45cd47b9ce9c091ab3bcd2c84f1dc64b134dc6b3168d926682c87c@group.calendar.google.com',
 				bocce: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
+				books: '4b4a0b4f8a2a1e370c0c33795e28399dc9194211d568d03cb27032a1f1385e4c@group.calendar.google.com',
 				canasta: 'd9eu0a3utdkjuif2nvaqph6s8blf9npo@import.calendar.google.com',
 				caregiver: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
 				itclub: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
@@ -265,6 +270,11 @@
 					id: 'bocce',
 					googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
 					color: '#3357FF'
+				},
+				books: {
+					id: 'books',
+					googleCalendarId: '4b4a0b4f8a2a1e370c0c33795e28399dc9194211d568d03cb27032a1f1385e4c@group.calendar.google.com',
+					color: '#40E0D0'
 				},
 				canasta: {
 					id: 'canasta',
@@ -542,6 +552,7 @@
 					<option value="grandview">Grandview Events</option>
 					<option value="arts">Arts and Crafts</option>
 					<option value="bocce">Bocce</option>
+					<option value="books">Book Clubs</option>
 					<option value="canasta">Canasta</option>
 					<option value="caregiver">Caregiver Support</option>
 					<option value="itclub">Computer/IT Club</option>
