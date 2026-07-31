@@ -73,7 +73,7 @@ p, li {
   margin: 0 0 var(--space-md);
 }
 
-p:last-of-type {
+p:last-of-child {
   margin-bottom: 0;
 }
 
