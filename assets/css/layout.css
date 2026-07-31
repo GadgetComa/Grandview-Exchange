@@ -225,5 +225,47 @@
 /* Forces the card's thin divider border to render below the main top description */
 .rich-text-area .section-desc + .grid .section-item-row:first-of-type {
   border-top: 1px solid var(--border);
-  padding-top: var(--space-lg);
+  padding-top: var(--space-xl);
+}
+
+/* Ensure all section rows have uniform spacing and top dividers */
+.section-item-row {
+  padding-top: var(--space-xl);
+  margin-top: var(--space-xl);
+  border-top: 1px solid var(--border);
+}
+
+/* Remove border/top-padding from the VERY FIRST row (Table of Contents) 
+   so it sits flush under the intro description */
+.section-block .grid-1col>.section-item-row:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.section-desc {
+  margin-bottom: var(--space-xl);
+  /* Increased from space-md */
+}
+
+/* Space after paragraph labels that start sub-sections */
+.section-item-row p strong {
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+}
+
+/* Ensure list spacing directly under paragraphs is clean and distinct */
+.section-item-row p+ul,
+.section-item-row p+ol {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+/* Prevent p:last-of-type from stripping margins when a list follows */
+p:last-of-type:not(:has(+ ul, + ol)) {
+  margin-bottom: 0;
+}
+
+.section-item-row li {
+  margin-bottom: var(--space-sm);
 }
