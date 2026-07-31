@@ -209,7 +209,7 @@
 
 /* Add clean spacing below interior item descriptions */
 .rich-text-area .section-item-desc {
-  margin-bottom: var(--space-xs);
+  margin-bottom: var(--space-md);
 }
 
 /* Ensure bulleted lists match identical spacing and indentation */
@@ -225,5 +225,5 @@
 /* Forces the card's thin divider border to render below the main top description */
 .rich-text-area .section-desc + .grid .section-item-row:first-of-type {
   border-top: 1px solid var(--border);
-  padding-top: var(--space-xs);
+  padding-top: var(--space-lg);
 }
