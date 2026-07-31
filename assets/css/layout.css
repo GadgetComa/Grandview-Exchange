@@ -254,13 +254,6 @@
   margin-bottom: var(--space-xs);
 }
 
-/* Ensure list spacing directly under paragraphs is clean and distinct */
-.section-item-row p+ul,
-.section-item-row p+ol {
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-lg);
-}
-
 /* Prevent p:last-of-type from stripping margins when a list follows */
 p:last-of-type:not(:has(+ ul, + ol)) {
   margin-bottom: 0;
@@ -268,4 +261,19 @@ p:last-of-type:not(:has(+ ul, + ol)) {
 
 .section-item-row li {
   margin-bottom: var(--space-sm);
+}
+
+/* 1. Eliminate bottom margin on paragraphs that immediately introduce a list */
+.section-item-row p:has(+ ul),
+.section-item-row p:has(+ ol) {
+  margin-bottom: 0;
+}
+
+/* 2. Attach the list cleanly under the paragraph with tight, normal spacing */
+.section-item-row p+ul,
+.section-item-row p+ol {
+  margin-top: var(--space-xs);
+  /* Reduced from space-sm (4px instead of 8px) */
+  margin-bottom: var(--space-md);
+  /* Reduced from space-lg for cleaner flow */
 }
