@@ -86,6 +86,3 @@ li {
   margin-bottom: var(--space-xs);
 }
 
-p+ul {
-  margin-top: var(--space-sm, 0.75rem);
-}
