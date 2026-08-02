@@ -230,7 +230,9 @@
 }
 
 /* Action Links */
-.section-item-action {
+/* Combined Centered Action & Sidebar Links */
+.section-item-action,
+.sidebar-link {
   color: var(--teal);
   text-decoration: underline;
   text-underline-offset: 5px;
@@ -238,20 +240,7 @@
   font-size: 1.15rem;
   margin-top: var(--space-sm);
   align-self: center;
-  /* Centered for main row CTA links */
 }
-
-.sidebar-link {
-  color: var(--teal);
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  font-weight: 600;
-  font-size: 1.15rem;
-  margin-top: var(--space-xs);
-  align-self: flex-start;
-  /* Left-aligned for sidebar items */
-}
-
 .section-item-action:hover,
 .sidebar-link:hover {
   color: var(--teal-dark);
