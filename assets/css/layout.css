@@ -230,8 +230,8 @@
 
 /* Ensure all section rows have uniform spacing and top dividers */
 .section-item-row {
-  padding-top: var(--space-xl);
-  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  margin-top: var(--space-md);
   border-top: 1px solid var(--border);
 }
 
@@ -274,6 +274,6 @@ p:last-of-type:not(:has(+ ul, + ol)) {
 .section-item-row p+ol {
   margin-top: var(--space-xs);
   /* Reduced from space-sm (4px instead of 8px) */
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
   /* Reduced from space-lg for cleaner flow */
 }
