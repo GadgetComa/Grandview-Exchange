@@ -214,7 +214,7 @@
 
 /* Ensure bulleted lists match identical spacing and indentation */
 .rich-text-area ul {
-  margin: 0 0 var(--space-md) 0;
+  margin: 0 0 var(--space-sm) 0;
   padding-left: var(--space-lg);
 }
 
@@ -276,4 +276,9 @@ p:last-of-type:not(:has(+ ul, + ol)) {
   /* Reduced from space-sm (4px instead of 8px) */
   margin-bottom: var(--space-sm);
   /* Reduced from space-lg for cleaner flow */
+}
+
+/* Ensure the last element inside any section row doesn't leak extra margin */
+.section-item-row>*:last-child {
+  margin-bottom: 0;
 }

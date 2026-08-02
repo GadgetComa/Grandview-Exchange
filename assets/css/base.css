@@ -70,7 +70,7 @@ h4 {
 p, li {
   font-size: 1.15rem;
   color: var(--text-body);
-  margin: 0 0 var(--space-md);
+  margin: 0 0 var(--space-sm);
 }
 
 p:last-of-type {
