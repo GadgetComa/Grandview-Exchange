@@ -281,7 +281,7 @@
 
 /* ---- Headings Inside Section Items ---- */
 .section-item-row h4 {
-  margin-top: var(--space-lg);
+  margin-top: var(--space-md);
   /* Adds generous breathing room above h4 headings */
   margin-bottom: var(--space-xs);
   /* Keeps title snug to the text/list below it */
