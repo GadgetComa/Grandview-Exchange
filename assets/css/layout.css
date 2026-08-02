@@ -11,6 +11,7 @@
 
 .grid-1col {
   grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .grid-2col {
@@ -34,20 +35,20 @@
 
 .site-header {
   max-width: var(--content-width);
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 0 var(--space-md);
 }
 
 .site-header img {
   width: 100%;
-  height: auto; 
+  height: auto;
   display: block;
 }
 
 /* ---- Balanced Two-Column Structural Frame ---- */
 .main-layout-wrapper {
   display: grid;
-  grid-template-columns: 1fr 320px; 
+  grid-template-columns: 1fr 320px;
   gap: var(--space-xl);
   margin-top: var(--space-xl);
   align-items: start;
@@ -58,34 +59,6 @@
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
-}
-
-/* ------------------------------------------------------------
-   CARD SYSTEM & CONTAINERS
-============================================================ */
-.card {
-  background: transparent;
-  padding: 0;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.card-desc {
-  font-size: 1.15rem;
-  color: var(--text-body);
-  line-height: 1.5;
-}
-
-/* Main content area expands to fill left-side track grid space */
-.main-content-area {
-  flex: 1;
-  min-width: 0;
 }
 
 /* Sidebar layout track base configuration rules */
@@ -107,27 +80,17 @@
   }
 }
 
-/* ---- Unified Structural Component Block ---- */
-.section-block {
-  background: var(--bg-white);
-  border-radius: 8px;
-  padding: var(--space-xl);
-  margin-bottom: var(--space-xl);
-  box-shadow: var(--shadow-card);
-}
-
 /* ============================================================
    GLOBAL NAVIGATION BAR (Breadcrumbs & Action Buttons)
 ============================================================ */
 #site-nav {
   max-width: var(--content-width);
-  margin: var(--space-lg) auto; 
+  margin: var(--space-lg) auto;
   padding: 0 var(--space-md);
   width: 100%;
-  display: block; /* Ensures the container is active and visible */
+  display: block;
 }
 
-/* Forces the inner elements to flex horizontally across the layout width */
 #site-nav .site-nav-row,
 .site-nav-row {
   display: flex !important;
@@ -136,7 +99,6 @@
   width: 100%;
 }
 
-/* Base styles for the breadcrumb text link string */
 .breadcrumb {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1.15rem;
@@ -152,13 +114,11 @@
   text-decoration: underline;
 }
 
-/* Container for your right-aligned button track */
 .nav-buttons {
   display: flex;
   align-items: center;
 }
 
-/* Reconciled Layout Selector: Targets BOTH the class name and link ID to guarantee visibility */
 #site-nav .btn-nav-return,
 #nav-back-link,
 .btn-nav-return {
@@ -171,15 +131,11 @@
   font-weight: 500;
   color: var(--text-dark) !important;
   text-decoration: none !important;
-  
-  /* Tinted box styling */
-  background-color: rgba(0, 0, 0, 0.05) !important; 
-  border-radius: 6px; 
-  
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 6px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-/* Gentle hover shift for focus interaction */
 #site-nav .btn-nav-return:hover,
 #nav-back-link:hover,
 .btn-nav-return:hover {
@@ -187,12 +143,130 @@
   color: var(--text-dark) !important;
 }
 
+/* ---- Page Intro Summary Headers ---- */
+.page-intro-summary {
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.page-intro-summary h1 {
+  font-family: 'Lora', serif;
+  margin-bottom: var(--space-md);
+}
+
+/* ---- Card Headings ---- */
+.section-block h2,
+.sidebar-heading {
+  font-family: 'Lora', serif;
+  margin: 0 0 var(--space-xs) 0;
+}
+/* ============================================================
+   UNIFIED CONTENT & SIDEBAR ITEM SPACING
+============================================================ */
+
+/* Main Section Blocks & Sidebar Container Cards */
+.section-block {
+  background: var(--bg-white);
+  border-radius: 8px;
+  padding: var(--space-xl);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* Section Sub-descriptions */
+.section-desc,
+.sidebar-intro {
+  color: var(--text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+/* Unified Row Item Layout (Main Area & Sidebar) */
+.section-item-row,
+.sidebar-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+/* First Item in a Block (No Border / No Top Margin) */
+.section-item-row:first-of-type,
+.sidebar-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* First Item directly following an intro description text */
+.section-desc+.section-item-row,
+.section-desc+.grid .section-item-row:first-of-type,
+.sidebar-intro+.sidebar-item {
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+/* Typography & Internal Item Spacing */
+.section-item-title,
+.sidebar-item h3 {
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.section-item-desc,
+.sidebar-item p {
+  margin: 0 0 var(--space-sm) 0;
+}
+
+/* Action Links */
+.section-item-action,
+.sidebar-link {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-top: var(--space-xs);
+  align-self: flex-start;
+}
+
+.section-item-action:hover,
+.sidebar-link:hover {
+  color: var(--teal-dark);
+  text-underline-offset: 7px;
+}
+
+/* Rich text and list rhythm inside section rows */
+.rich-text-area ul,
+.rich-text-area ol {
+  margin: var(--space-xs) 0 var(--space-sm) 0;
+  padding-left: var(--space-lg);
+}
+
+.rich-text-area li {
+  line-height: 1.5;
+  margin-bottom: var(--space-xs);
+}
+
+.section-item-row p strong {
+  display: inline-block;
+  margin-bottom: var(--space-xs);
+}
+
+/* Prevent bottom margins from leaking out of row containers */
+.section-item-row>*:last-child,
+.sidebar-item>*:last-child {
+  margin-bottom: 0;
+}
+
 /* ============================================================
    GLOBAL FOOTER SYSTEM
 ============================================================ */
 .site-footer {
-  text-align: center;         
-  padding: var(--space-xl) 0;  
+  text-align: center;
+  padding: var(--space-xl) 0;
   border-top: 1px solid var(--border);
   width: 100%;
 }
@@ -201,84 +275,4 @@
   font-size: 1.15rem;
   color: var(--text-muted);
   margin: 0;
-}
-
-/* ============================================================
-   Global Informational Layout & Spacing System
-============================================================ */
-
-/* Add clean spacing below interior item descriptions */
-.rich-text-area .section-item-desc {
-  margin-bottom: var(--space-md);
-}
-
-/* Ensure bulleted lists match identical spacing and indentation */
-.rich-text-area ul {
-  margin: 0 0 var(--space-sm) 0;
-  padding-left: var(--space-lg);
-}
-
-.rich-text-area ul li {
-  line-height: 1.5;
-}
-
-/* Forces the card's thin divider border to render below the main top description */
-.rich-text-area .section-desc + .grid .section-item-row:first-of-type {
-  border-top: 1px solid var(--border);
-  padding-top: var(--space-xl);
-}
-
-/* Ensure all section rows have uniform spacing and top dividers */
-.section-item-row {
-  padding-top: var(--space-md);
-  margin-top: var(--space-md);
-  border-top: 1px solid var(--border);
-}
-
-/* Remove border/top-padding from the VERY FIRST row (Table of Contents) 
-   so it sits flush under the intro description */
-.section-block .grid-1col>.section-item-row:first-child {
-  border-top: none;
-  padding-top: 0;
-  margin-top: 0;
-}
-
-.section-desc {
-  margin-bottom: var(--space-xl);
-  /* Increased from space-md */
-}
-
-/* Space after paragraph labels that start sub-sections */
-.section-item-row p strong {
-  display: inline-block;
-  margin-bottom: var(--space-xs);
-}
-
-/* Prevent p:last-of-type from stripping margins when a list follows */
-p:last-of-type:not(:has(+ ul, + ol)) {
-  margin-bottom: 0;
-}
-
-.section-item-row li {
-  margin-bottom: var(--space-sm);
-}
-
-/* 1. Eliminate bottom margin on paragraphs that immediately introduce a list */
-.section-item-row p:has(+ ul),
-.section-item-row p:has(+ ol) {
-  margin-bottom: 0;
-}
-
-/* 2. Attach the list cleanly under the paragraph with tight, normal spacing */
-.section-item-row p+ul,
-.section-item-row p+ol {
-  margin-top: var(--space-xs);
-  /* Reduced from space-sm (4px instead of 8px) */
-  margin-bottom: var(--space-sm);
-  /* Reduced from space-lg for cleaner flow */
-}
-
-/* Ensure the last element inside any section row doesn't leak extra margin */
-.section-item-row>*:last-child {
-  margin-bottom: 0;
 }

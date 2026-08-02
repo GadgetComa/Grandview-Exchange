@@ -7,7 +7,6 @@
 
 /* Page‑specific overrides */
 @import url("pages/ways-to-use.css");
-@import url("pages/index.css");
 @import url("pages/help-center.css");
 @import url("pages/calendar.css");
 @import url("pages/finding-login.css");
