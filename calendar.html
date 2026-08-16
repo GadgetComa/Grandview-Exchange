@@ -6,7 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>The Grandview Community Calendar</title>
 
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+		rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
@@ -50,48 +52,129 @@
 
 				<div class="sidebar-item">
 					<h3>Select View</h3>
-					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="listMonth" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
+					<div
+						style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="listMonth" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
 						</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="timeGridWeek" style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="timeGridWeek"
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
 						</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="dayGridMonth" style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="dayGridMonth"
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
 						</label>
 					</div>
 				</div>
 
 				<div class="sidebar-item">
 					<h3>Show Calendars</h3>
-					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="grandview" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="arts" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Arts and Crafts</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="bocce" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="books" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Book Clubs</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="canasta" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Canasta Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="cards" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Canasta Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="caregiver" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="itclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="fitness" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="history" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> History Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="interest" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Interest Groups</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="kcart" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Kim Cohen Art
+					<div
+						style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="grandview" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Grandview Events</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="arts" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Arts and Crafts</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="billiards" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Billiars</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="bocce" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Bocce Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="books" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Book Clubs</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="canasta" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Canasta Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="caregiver" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Caregiver Support</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="itclub" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Computer/IT Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="fitness" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Fitness</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="grandclub" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> The Grand Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="history" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> History Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="interest" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Interest Groups</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="kcart" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Kim Cohen Art
 							Club</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mahjongg" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="mahjongg" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Mah Jongg Club</label>
 
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="ressvcs" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="speaker" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="ressvcs" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Resident Services</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="shuttle" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Shuttle Schedule</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="singles" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Singles Social
+							Group</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="speaker" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Speaker
 							Presentation</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="mobility" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Transportation
-							Club</label><label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input type="checkbox" class="cal-toggle" data-cal="tvclub" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="mobility" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Transportation
+							Club</label><label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="tvclub" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> TV Club</label>
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;"><input
+								type="checkbox" class="cal-toggle" data-cal="volunteer" checked
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Volunteer
+							Programs</label>
 						<hr>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 600; cursor: pointer;">
-							<input type="checkbox" id="check-all-cals" style="width: 16px; height: 16px; accent-color: var(--teal);"> Check All Calendars
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 600; cursor: pointer;">
+							<input type="checkbox" id="check-all-cals"
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Check All Calendars
 						</label>
-						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 600; cursor: pointer;">
-							<input type="checkbox" id="uncheck-all-cals" style="width: 16px; height: 16px; accent-color: var(--teal);"> Uncheck All Calendars
+						<label
+							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 600; cursor: pointer;">
+							<input type="checkbox" id="uncheck-all-cals"
+								style="width: 16px; height: 16px; accent-color: var(--teal);"> Uncheck All Calendars
 						</label>
 					</div>
 				</div>
@@ -122,7 +205,7 @@
 
 
 	<script>
-		document.addEventListener('DOMContentLoaded', function() {
+		document.addEventListener('DOMContentLoaded', function () {
 
 			/* ------------------------------
 			   SUBSCRIBE MODAL LOGIC
@@ -149,6 +232,7 @@
 			const subscribeLinks = {
 				grandview: 'grandviewexchangecalendar@gmail.com',
 				arts: '2bb13c5b1b45cd47b9ce9c091ab3bcd2c84f1dc64b134dc6b3168d926682c87c@group.calendar.google.com',
+				billiards: '42f49d1b2a16529d635a62a8e2ae91ca388f4ecb8cbeeea93e7bbd79bc0f3c84@group.calendar.google.com',
 				bocce: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
 				books: '4b4a0b4f8a2a1e370c0c33795e28399dc9194211d568d03cb27032a1f1385e4c@group.calendar.google.com',
 				canasta: 'd9eu0a3utdkjuif2nvaqph6s8blf9npo@import.calendar.google.com',
@@ -156,14 +240,18 @@
 				caregiver: 'cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com',
 				itclub: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
 				fitness: '6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9@group.calendar.google.com',
+				grandclub: 'dacd6027cc9ecb8dea18f6698eaf8de3fbc95dc5041abe4b0b057393a417490e@group.calendar.google.com',
 				history: 'e6b52ca8f8bbb723d82bcffff25d666c9c5fd1f858af8c04acc261e6a097642d@group.calendar.google.com',
 				interest: '109ee78a6f713cf7f2c33aed20f96dac6c31c7c159d873e45b7c2180bba64d5d@group.calendar.google.com',
 				kcart: 'msknbko5rg50vkf4dobndrd7gs8ucs55@import.calendar.google.com',
 				mahjongg: '0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a@group.calendar.google.com',
 				ressvcs: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
+				shuttle: 'dab278c7c3e3cca83f843f45d0db18c8d879505233778ad199f48e0d6d2407d4@group.calendar.google.com',
+				singles: 'b757f616bc0f39db582afe640e692bcc40c2571a3654a9db7138bc03cbab99cc@group.calendar.google.com',
 				speaker: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
 				mobility: 'cbsm17e3g2mvn0g80ogdlmo13o6qfrn2@import.calendar.google.com',
-				tvclub: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com'
+				tvclub: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com',
+				volunteer: 'cfbef94f21f4ff990da3ac9da0365f01b6cf3ea50f228ad2b80fcf70f0e8611c@group.calendar.google.com'
 			};
 
 			document.getElementById('subscribeNow').onclick = () => {
@@ -208,6 +296,11 @@
 					googleCalendarId: '2bb13c5b1b45cd47b9ce9c091ab3bcd2c84f1dc64b134dc6b3168d926682c87c@group.calendar.google.com',
 					color: '#33FF57'
 				},
+				billiards: {
+					id: 'billiards',
+					googleCalendarId: '42f49d1b2a16529d635a62a8e2ae91ca388f4ecb8cbeeea93e7bbd79bc0f3c84@group.calendar.google.com',
+					color: '#3357FF'
+				},
 				bocce: {
 					id: 'bocce',
 					googleCalendarId: 'b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd@group.calendar.google.com',
@@ -236,6 +329,11 @@
 				itclub: {
 					id: 'itclub',
 					googleCalendarId: 'd4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com',
+					color: '#33A1FF'
+				},
+				grandclub: {
+					id: 'grandclub',
+					googleCalendarId: 'dacd6027cc9ecb8dea18f6698eaf8de3fbc95dc5041abe4b0b057393a417490e@group.calendar.google.com',
 					color: '#33A1FF'
 				},
 				fitness: {
@@ -268,6 +366,16 @@
 					googleCalendarId: '0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd@group.calendar.google.com',
 					color: '#000080'
 				},
+				shuttle: {
+					id: 'shuttle',
+					googleCalendarId: 'dab278c7c3e3cca83f843f45d0db18c8d879505233778ad199f48e0d6d2407d4@group.calendar.google.com',
+					color: '#000080'
+				},
+				singles: {
+					id: 'singles',
+					googleCalendarId: 'b757f616bc0f39db582afe640e692bcc40c2571a3654a9db7138bc03cbab99cc@group.calendar.google.com',
+					color: '#000080'
+				},
 				speaker: {
 					id: 'speaker',
 					googleCalendarId: '3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com',
@@ -282,6 +390,11 @@
 					id: 'tvclub',
 					googleCalendarId: '1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com',
 					color: '#800080'
+				},
+				volunteer: {
+					id: 'volunteer',
+					googleCalendarId: 'cfbef94f21f4ff990da3ac9da0365f01b6cf3ea50f228ad2b80fcf70f0e8611c@group.calendar.google.com',
+					color: '#800080'
 				}
 			};
 
@@ -293,7 +406,7 @@
 				initialDate: new Date(),
 
 				// 2. CRITICAL FIX: Explicitly restrict the list view from looking backward into historical years
-				validRange: function(nowDate) {
+				validRange: function (nowDate) {
 					return {
 						start: nowDate // Prevents the view from automatically snapping backwards before today!
 					};
@@ -310,7 +423,7 @@
 				},
 
 				// 3. REWRITTEN: Ensure layout controls are cleanly forced to 'flex' so toolbar stays visible
-				viewDidMount: function(info) {
+				viewDidMount: function (info) {
 					const toolbar = document.querySelector('.fc-header-toolbar');
 					if (toolbar) {
 						toolbar.style.setProperty('display', 'flex', 'important');
@@ -321,7 +434,7 @@
 				eventSources: Object.values(eventSourceConfigs),
 
 
-				eventClick: function(info) {
+				eventClick: function (info) {
 					info.jsEvent.preventDefault();
 					const event = info.event;
 
@@ -365,7 +478,7 @@
 			});
 
 			document.querySelectorAll('.cal-toggle').forEach(cb => {
-				cb.addEventListener('change', function() {
+				cb.addEventListener('change', function () {
 					const id = this.dataset.cal;
 					const existing = calendar.getEventSourceById(id);
 
@@ -406,21 +519,21 @@
 				});
 			}
 
-			checkAllBox.addEventListener('change', function() {
+			checkAllBox.addEventListener('change', function () {
 				if (this.checked) {
 					uncheckAllBox.checked = false; // Mutually exclusive
 					setAllCalendarsState(true);
 				}
 			});
 
-			checkAllBox.addEventListener('change', function() {
+			checkAllBox.addEventListener('change', function () {
 				if (this.checked) {
 					uncheckAllBox.checked = false; // Mutually exclusive
 					setAllCalendarsState(true);
 				}
 			});
 
-			uncheckAllBox.addEventListener('change', function() {
+			uncheckAllBox.addEventListener('change', function () {
 				if (this.checked) {
 					checkAllBox.checked = false; // Mutually exclusive
 					setAllCalendarsState(false);
@@ -429,7 +542,7 @@
 
 			// Evaluates states instantly when an individual toggle is clicked
 			individualToggles.forEach(cb => {
-				cb.addEventListener('change', function() {
+				cb.addEventListener('change', function () {
 					// 1. Count how many individual calendars are currently active
 					const checkedCount = document.querySelectorAll('.cal-toggle:checked').length;
 
@@ -476,7 +589,8 @@
 			<button class="modal-close" id="modalClose">×</button>
 			<h3 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 8px;"></h3>
 			<p id="modalDate" style="font-size: 1rem; color: var(--text-dark); margin-bottom: 6px;"></p>
-			<p id="modalLocation" style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
+			<p id="modalLocation"
+				style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
 			<p id="modalDescription" style="line-height: 1.5; color: var(--text-body);"></p>
 		</div>
 	</div>
@@ -493,7 +607,8 @@
 				<label for="calendarSelect" style="display: block; margin-bottom: 6px; color: var(--text-dark);">
 					<strong>Select a calendar:</strong>
 				</label>
-				<select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
+				<select id="calendarSelect" class="modal-select"
+					style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
 					<option value="grandview">Grandview Events</option>
 					<option value="arts">Arts and Crafts</option>
 					<option value="bocce">Bocce</option>
@@ -517,21 +632,26 @@
 				<strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar
 					app:</strong>
 				<div style="display: flex; flex-direction: column; gap: 8px;">
-					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-						<input type="radio" name="subPlatform" value="google" checked style="accent-color: var(--teal);"> Google Calendar
+					<label
+						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="google" checked
+							style="accent-color: var(--teal);"> Google Calendar
 					</label>
-					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+					<label
+						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
 						<input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple
 						Calendar
 					</label>
-					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+					<label
+						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
 						<input type="radio" name="subPlatform" value="outlook" style="accent-color: var(--teal);">
 						Outlook / Other
 					</label>
 				</div>
 			</div>
 
-			<button id="subscribeNow" class="btn" style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
+			<button id="subscribeNow" class="btn"
+				style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
 				Subscribe
 			</button>
 		</div>
