@@ -100,286 +100,191 @@
 	</footer>
 
 	<script>
-		document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', async function () {
 
-			/* ------------------------------
-			   DYNAMIC COLOR GENERATOR
-			--------------------------------*/
-			function generateColor(index, total) {
-				const hue = (index * (360 / Math.max(total, 1)) + 15) % 360;
-				return `hsl(${Math.round(hue)}, 70%, 45%)`;
-			}
+    /* ------------------------------
+       DYNAMIC COLOR GENERATOR
+    --------------------------------*/
+    function generateColor(index, total) {
+        const hue = (index * (360 / Math.max(total, 1)) + 15) % 360;
+        return `hsl(${Math.round(hue)}, 70%, 45%)`;
+    }
 
-			/* ------------------------------
-			   FETCH CALENDAR CONFIGURATION
-			--------------------------------*/
-			let calendarConfigs = [];
-			try {
-				const res = await fetch('calendars.json');
-				if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-				calendarConfigs = await res.json();
-			} catch (err) {
-				console.error("Failed to load calendars.json:", err);
-				return;
-			}
+    /* ------------------------------
+       FETCH CALENDAR CONFIGURATION
+    --------------------------------*/
+    let calendarConfigs = [];
+    try {
+        const res = await fetch('calendars.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch calendars.json`);
+        calendarConfigs = await res.json();
+    } catch (err) {
+        console.error("Calendar initialization error:", err);
+        document.getElementById('calendar').innerHTML = 
+            `<div style="color: red; padding: 20px; font-weight: bold;">
+                Error loading calendar configurations. If testing locally, please run through a local web server (e.g., Live Server or python -m http.server).
+             </div>`;
+        return;
+    }
 
-			/* ------------------------------
-			   BUILD SOURCES & UI ELEMENTS
-			--------------------------------*/
-			const eventSourceConfigs = {};
-			const subscribeLinks = {};
-			const container = document.getElementById('calendar-checkboxes-container');
-			const selectDropdown = document.getElementById('calendarSelect');
+    /* ------------------------------
+       BUILD SOURCES & UI ELEMENTS
+    --------------------------------*/
+    const eventSourceConfigs = {};
+    const subscribeLinks = {};
+    const container = document.getElementById('calendar-checkboxes-container');
+    const selectDropdown = document.getElementById('calendarSelect');
 
-			calendarConfigs.forEach((cal, idx) => {
-				const assignedColor = cal.color || generateColor(idx, calendarConfigs.length);
+    container.innerHTML = '';
+    selectDropdown.innerHTML = '';
 
-				eventSourceConfigs[cal.id] = {
-					id: cal.id,
-					googleCalendarId: cal.googleCalendarId,
-					color: assignedColor
-				};
+    calendarConfigs.forEach((cal, idx) => {
+        const assignedColor = (cal.color && /^#[0-9A-F]{6}$/i.test(cal.color)) 
+            ? cal.color 
+            : generateColor(idx, calendarConfigs.length);
 
-				subscribeLinks[cal.id] = cal.googleCalendarId;
+        eventSourceConfigs[cal.id] = {
+            id: cal.id,
+            googleCalendarId: cal.googleCalendarId,
+            color: assignedColor
+        };
 
-				// Create Checkbox UI
-				const label = document.createElement('label');
-				label.style.cssText = 'font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;';
-				label.innerHTML = `
-					<input type="checkbox" class="cal-toggle" data-cal="${cal.id}" checked style="width: 16px; height: 16px; accent-color: ${assignedColor};"> 
-					${cal.name}
-				`;
-				container.appendChild(label);
+        subscribeLinks[cal.id] = cal.googleCalendarId;
 
-				// Create Subscription Modal Select Option
-				const option = document.createElement('option');
-				option.value = cal.id;
-				option.textContent = cal.name;
-				selectDropdown.appendChild(option);
-			});
+        // Create Checkbox UI
+        const label = document.createElement('label');
+        label.style.cssText = 'font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;';
+        label.innerHTML = `
+            <input type="checkbox" class="cal-toggle" data-cal="${cal.id}" checked style="width: 16px; height: 16px; accent-color: ${assignedColor};"> 
+            ${cal.name}
+        `;
+        container.appendChild(label);
 
-			/* ------------------------------
-			   SUBSCRIBE MODAL LOGIC
-			--------------------------------*/
-			const subscribeModal = document.getElementById('subscribeModal');
-			const openSubscribeModal = document.getElementById('open-subscribe-modal');
-			const closeSubscribeModal = document.getElementById('subscribeModalClose');
+        // Create Subscription Option
+        const option = document.createElement('option');
+        option.value = cal.id;
+        option.textContent = cal.name;
+        selectDropdown.appendChild(option);
+    });
 
-			openSubscribeModal.onclick = (e) => {
-				e.preventDefault();
-				subscribeModal.style.display = 'flex';
-			};
+    /* ------------------------------
+       FULLCALENDAR MOUNTING ENGINE
+    --------------------------------*/
+    const calendarEl = document.getElementById('calendar');
 
-			closeSubscribeModal.onclick = () => {
-				subscribeModal.style.display = 'none';
-			};
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'listMonth',
+        height: 'auto',
+        initialDate: new Date(),
+        validRange: {
+            start: new Date()
+        },
+        headerToolbar: {
+            left: 'prev',
+            center: 'title',
+            right: 'next'
+        },
+        buttonText: {
+            prev: '< Previous',
+            next: 'Next >'
+        },
+        googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
+        eventSources: Object.values(eventSourceConfigs),
+        eventClick: function(info) {
+            info.jsEvent.preventDefault();
+            const event = info.event;
 
-			subscribeModal.onclick = (e) => {
-				if (e.target.id === 'subscribeModal') {
-					subscribeModal.style.display = 'none';
-				}
-			};
+            document.getElementById('modalTitle').textContent = event.title;
+            document.getElementById('modalDate').textContent = event.start.toLocaleString('en-US', {
+                weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric', minute: '2-digit'
+            });
+            document.getElementById('modalLocation').textContent =
+                event.extendedProps.location ? `Location: ${event.extendedProps.location}` : '';
 
-			document.getElementById('subscribeNow').onclick = () => {
-				const cal = selectDropdown.value;
-				const platform = document.querySelector('input[name="subPlatform"]:checked').value;
-				const id = subscribeLinks[cal];
+            let desc = event.extendedProps.description || "";
+            desc = desc.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, '');
+            desc = desc.includes('<a ') ? desc.replace(/\n/g, '<br>') : desc.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g, '<br>');
 
-				let url = '';
+            document.getElementById('modalDescription').innerHTML = desc;
+            document.getElementById('eventModal').style.display = 'flex';
+        }
+    });
 
-				if (platform === 'google') {
-					url = `https://calendar.google.com/calendar/u/0?cid=${encodeURIComponent(id)}`;
-				} else if (platform === 'apple') {
-					url = `webcal://calendar.google.com/calendar/ical/${encodeURIComponent(id)}/public/basic.ics`;
-				} else {
-					url = `https://calendar.google.com/calendar/ical/${encodeURIComponent(id)}/public/basic.ics`;
-				}
+    calendar.render();
 
-				window.open(url, '_blank');
+    /* ------------------------------
+       DYNAMIC ATTACHMENT OF LISTENERS
+    --------------------------------*/
+    const individualToggles = document.querySelectorAll('.cal-toggle');
+    const checkAllBox = document.getElementById('check-all-cals');
+    const uncheckAllBox = document.getElementById('uncheck-all-cals');
 
-				setTimeout(() => {
-					const again = confirm("Subscription added. Would you like to subscribe to another calendar?");
-					if (!again) {
-						subscribeModal.style.display = 'none';
-					}
-				}, 500);
-			};
+    individualToggles.forEach(cb => {
+        cb.addEventListener('change', function() {
+            const id = this.dataset.cal;
+            const existing = calendar.getEventSourceById(id);
 
-			/* ------------------------------
-			   FULLCALENDAR MOUNTING ENGINE
-			--------------------------------*/
-			const calendarEl = document.getElementById('calendar');
+            if (this.checked) {
+                if (!existing && eventSourceConfigs[id]) calendar.addEventSource(eventSourceConfigs[id]);
+            } else {
+                if (existing) existing.remove();
+            }
 
-			const calendar = new FullCalendar.Calendar(calendarEl, {
-				initialView: 'listMonth',
-				height: 'auto',
-				initialDate: new Date(),
+            const checkedCount = document.querySelectorAll('.cal-toggle:checked').length;
+            checkAllBox.checked = (checkedCount === individualToggles.length);
+            uncheckAllBox.checked = (checkedCount === 0);
+        });
+    });
 
-				validRange: function(nowDate) {
-					return {
-						start: nowDate
-					};
-				},
+    function setAllCalendarsState(shouldCheck) {
+        individualToggles.forEach(cb => {
+            if (cb.checked !== shouldCheck) {
+                cb.checked = shouldCheck;
+                const id = cb.dataset.cal;
+                const existing = calendar.getEventSourceById(id);
 
-				headerToolbar: {
-					left: 'prev',
-					center: 'title',
-					right: 'next'
-				},
-				buttonText: {
-					prev: '< Previous',
-					next: 'Next >'
-				},
+                if (shouldCheck) {
+                    if (!existing && eventSourceConfigs[id]) calendar.addEventSource(eventSourceConfigs[id]);
+                } else {
+                    if (existing) existing.remove();
+                }
+            }
+        });
+    }
 
-				viewDidMount: function(info) {
-					const toolbar = document.querySelector('.fc-header-toolbar');
-					if (toolbar) {
-						toolbar.style.setProperty('display', 'flex', 'important');
-					}
-				},
+    checkAllBox.addEventListener('change', function() {
+        if (this.checked) {
+            uncheckAllBox.checked = false;
+            setAllCalendarsState(true);
+        }
+    });
 
-				googleCalendarApiKey: 'AIzaSyAkm3pk9TEvD2qZekyq8Exw99k4WYmPK3E',
-				eventSources: Object.values(eventSourceConfigs),
+    uncheckAllBox.addEventListener('change', function() {
+        if (this.checked) {
+            checkAllBox.checked = false;
+            setAllCalendarsState(false);
+        }
+    });
 
-				eventClick: function(info) {
-					info.jsEvent.preventDefault();
-					const event = info.event;
+    document.querySelectorAll('input[name="view"]').forEach(radio => {
+        radio.addEventListener('change', () => calendar.changeView(radio.value));
+    });
 
-					document.getElementById('modalTitle').textContent = event.title;
+    /* ------------------------------
+       MODAL & PRINT LISTENERS
+    --------------------------------*/
+    document.getElementById('print-calendar').onclick = (e) => {
+        e.preventDefault();
+        calendar.changeView('listMonth');
+        setTimeout(() => window.print(), 200);
+    };
 
-					const start = event.start;
-					const dateOptions = {
-						weekday: 'long',
-						month: 'long',
-						day: 'numeric',
-						hour: 'numeric',
-						minute: '2-digit'
-					};
-					document.getElementById('modalDate').textContent = start.toLocaleString('en-US', dateOptions);
+    const subscribeModal = document.getElementById('subscribeModal');
+    document.getElementById('open-subscribe-modal').onclick = (e) => { e.preventDefault(); subscribeModal.style.display = 'flex'; };
+    document.getElementById('subscribeModalClose').onclick = () => { subscribeModal.style.display = 'none'; };
+    document.getElementById('modalClose').onclick = () => { document.getElementById('eventModal').style.display = 'none'; };
+});
 
-					document.getElementById('modalLocation').textContent =
-						event.extendedProps.location ? `Location: ${event.extendedProps.location}` : '';
-
-					let desc = event.extendedProps.description || "";
-					desc = desc.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, '');
-
-					if (desc.includes('<a ')) {
-						desc = desc.replace(/\n/g, '<br>');
-					} else {
-						desc = desc
-							.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')
-							.replace(/\n/g, '<br>');
-					}
-
-					document.getElementById('modalDescription').innerHTML = desc;
-					document.getElementById('eventModal').style.display = 'flex';
-				}
-			});
-
-			calendar.render();
-
-			/* ------------------------------
-			   TOGGLE & VIEW CONTROLS
-			--------------------------------*/
-			document.querySelectorAll('input[name="view"]').forEach(radio => {
-				radio.addEventListener('change', () => {
-					calendar.changeView(radio.value);
-				});
-			});
-
-			// CRITICAL FIX: Query the dynamically created toggles AFTER they have been appended to the DOM
-			const individualToggles = document.querySelectorAll('.cal-toggle');
-			const checkAllBox = document.getElementById('check-all-cals');
-			const uncheckAllBox = document.getElementById('uncheck-all-cals');
-
-			individualToggles.forEach(cb => {
-				cb.addEventListener('change', function() {
-					const id = this.dataset.cal;
-					const existing = calendar.getEventSourceById(id);
-
-					if (this.checked) {
-						if (!existing && eventSourceConfigs[id]) calendar.addEventSource(eventSourceConfigs[id]);
-					} else {
-						if (existing) existing.remove();
-					}
-
-					const checkedCount = document.querySelectorAll('.cal-toggle:checked').length;
-
-					if (!this.checked) {
-						checkAllBox.checked = false;
-					} else {
-						uncheckAllBox.checked = false;
-					}
-
-					if (checkedCount === individualToggles.length) {
-						checkAllBox.checked = true;
-					}
-				});
-			});
-
-			/* ------------------------------
-			   MASTER CHECKBOX CONTROLS
-			--------------------------------*/
-			function setAllCalendarsState(shouldCheck) {
-				individualToggles.forEach(cb => {
-					if (cb.checked !== shouldCheck) {
-						cb.checked = shouldCheck;
-
-						const id = cb.dataset.cal;
-						const existing = calendar.getEventSourceById(id);
-
-						if (shouldCheck) {
-							if (!existing && eventSourceConfigs[id]) {
-								calendar.addEventSource(eventSourceConfigs[id]);
-							}
-						} else {
-							if (existing) {
-								existing.remove();
-							}
-						}
-					}
-				});
-			}
-
-			checkAllBox.addEventListener('change', function() {
-				if (this.checked) {
-					uncheckAllBox.checked = false;
-					setAllCalendarsState(true);
-				}
-			});
-
-			uncheckAllBox.addEventListener('change', function() {
-				if (this.checked) {
-					checkAllBox.checked = false;
-					setAllCalendarsState(false);
-				}
-			});
-
-			const initialCheckedCount = document.querySelectorAll('.cal-toggle:checked').length;
-			if (initialCheckedCount === individualToggles.length) {
-				checkAllBox.checked = true;
-			}
-
-			/* ------------------------------
-			   PRINT & MODAL LISTENERS
-			--------------------------------*/
-			document.getElementById('print-calendar').onclick = (e) => {
-				e.preventDefault();
-				calendar.changeView('listMonth');
-				setTimeout(() => window.print(), 200);
-			};
-
-			document.getElementById('modalClose').onclick = () => {
-				document.getElementById('eventModal').style.display = 'none';
-			};
-
-			document.getElementById('eventModal').onclick = (e) => {
-				if (e.target.id === 'eventModal') {
-					document.getElementById('eventModal').style.display = 'none';
-				}
-			};
-
-		});
 	</script>
 
 	<div id="eventModal" class="modal-overlay" style="display:none;">
