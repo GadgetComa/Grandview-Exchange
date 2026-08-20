@@ -6,9 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>The Grandview Community Calendar</title>
 
-	<link
-		href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
-		rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 	<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
@@ -52,22 +50,15 @@
 
 				<div class="sidebar-item">
 					<h3>Select View</h3>
-					<div
-						style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-						<label
-							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="listMonth" checked
-								style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
+					<div style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="listMonth" checked style="width: 16px; height: 16px; accent-color: var(--teal);"> Agenda
 						</label>
-						<label
-							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="timeGridWeek"
-								style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="timeGridWeek" style="width: 16px; height: 16px; accent-color: var(--teal);"> Week
 						</label>
-						<label
-							style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
-							<input type="radio" name="view" value="dayGridMonth"
-								style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
+						<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;">
+							<input type="radio" name="view" value="dayGridMonth" style="width: 16px; height: 16px; accent-color: var(--teal);"> Month
 						</label>
 					</div>
 				</div>
@@ -350,14 +341,14 @@
 				});
 			}
 
-			checkAllBox.addEventListener('change', function () {
+			checkAllBox.addEventListener('change', function() {
 				if (this.checked) {
 					uncheckAllBox.checked = false;
 					setAllCalendarsState(true);
 				}
 			});
 
-			uncheckAllBox.addEventListener('change', function () {
+			uncheckAllBox.addEventListener('change', function() {
 				if (this.checked) {
 					checkAllBox.checked = false;
 					setAllCalendarsState(false);
@@ -396,8 +387,7 @@
 			<button class="modal-close" id="modalClose">×</button>
 			<h3 id="modalTitle" style="font-family: 'Lora', serif; margin-bottom: 8px;"></h3>
 			<p id="modalDate" style="font-size: 1rem; color: var(--text-dark); margin-bottom: 6px;"></p>
-			<p id="modalLocation"
-				style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
+			<p id="modalLocation" style="font-size: 1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 12px;"></p>
 			<p id="modalDescription" style="line-height: 1.5; color: var(--text-body);"></p>
 		</div>
 	</div>
@@ -422,10 +412,8 @@
 			<div class="modal-section" style="margin: 20px 0;">
 				<strong style="display: block; margin-bottom: 8px; color: var(--text-dark);">Choose your calendar app:</strong>
 				<div style="display: flex; flex-direction: column; gap: 8px;">
-					<label
-						style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
-						<input type="radio" name="subPlatform" value="google" checked
-							style="accent-color: var(--teal);"> Google Calendar
+					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+						<input type="radio" name="subPlatform" value="google" checked style="accent-color: var(--teal);"> Google Calendar
 					</label>
 					<label style="font-size: 1rem; display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
 						<input type="radio" name="subPlatform" value="apple" style="accent-color: var(--teal);"> Apple Calendar
@@ -436,8 +424,7 @@
 				</div>
 			</div>
 
-			<button id="subscribeNow" class="btn"
-				style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
+			<button id="subscribeNow" class="btn" style="display: block; margin: var(--space-lg) auto 0; padding: 10px 24px;">
 				Subscribe
 			</button>
 		</div>
