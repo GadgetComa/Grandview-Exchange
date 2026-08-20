@@ -266,6 +266,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     });
 
+    // Sync initial checkbox state on load
+    if (individualToggles.length > 0) {
+        checkAllBox.checked = (document.querySelectorAll('.cal-toggle:checked').length === individualToggles.length);
+    }
+
     document.querySelectorAll('input[name="view"]').forEach(radio => {
         radio.addEventListener('change', () => calendar.changeView(radio.value));
     });
