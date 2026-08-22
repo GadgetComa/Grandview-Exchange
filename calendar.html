@@ -9,7 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 
-	<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/main.min.css" rel="stylesheet">
+	
 	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@6.1.10/index.global.min.js"></script>
 	<script src="assets/js/global.js" defer></script>
@@ -265,6 +265,11 @@ document.addEventListener('DOMContentLoaded', async function () {
             setAllCalendarsState(false);
         }
     });
+
+    // Sync initial checkbox state on load
+    if (individualToggles.length > 0) {
+        checkAllBox.checked = (document.querySelectorAll('.cal-toggle:checked').length === individualToggles.length);
+    }
 
     document.querySelectorAll('input[name="view"]').forEach(radio => {
         radio.addEventListener('change', () => calendar.changeView(radio.value));
