@@ -100,6 +100,12 @@
     "name": "TV Club",
     "googleCalendarId": "1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926@group.calendar.google.com",
     "color": "#800080"
+  },
+  {
+	"id": "photography",
+	"name": "Photography Club",
+	"googleCalendarId": "u027l8h4pcm33g55t0seims6h5hu8k8l@import.calendar.google.com",
+	"color": "#00FFFF"
   }
 ]
 
