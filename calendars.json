@@ -60,6 +60,12 @@
     "color": "#FFD700"
   },
   {
+    "id": "genealogy",
+    "name": "Genealogy Club",
+    "googleCalendarId": "544f8b9773de68ddbd8094ad8ff0847da697a2291ea3ec52ca77bece6c604a75@group.calendar.google.com",
+    "color": "#A133FF"
+  },
+  {
     "id": "history",
     "name": "History Club",
     "googleCalendarId": "e6b52ca8f8bbb723d82bcffff25d666c9c5fd1f858af8c04acc261e6a097642d@group.calendar.google.com",
