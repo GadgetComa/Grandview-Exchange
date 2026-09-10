@@ -108,6 +108,12 @@
     "color": "#000080"
   },
   {
+    "id": "shuttle",
+    "name": "Shuttle Schedule",
+    "googleCalendarId": "dab278c7c3e3cca83f843f45d0db18c8d879505233778ad199f48e0d6d2407d4@group.calendar.google.com",
+    "color": "#000080"
+  },
+  {
     "id": "speaker",
     "name": "Speaker Presentation",
     "googleCalendarId": "3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b@group.calendar.google.com",
