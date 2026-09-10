@@ -11,6 +11,12 @@
     "googleCalendarId": "2bb13c5b1b45cd47b9ce9c091ab3bcd2c84f1dc64b134dc6b3168d926682c87c@group.calendar.google.com",
     "color": "#33FF57"
   },
+    {
+    "id": "bible",
+    "name": "Bible Study",
+    "googleCalendarId": "7cd4c02596d05b035b5666d1a899def71c560c92ff14918f8aae71924f09e255@group.calendar.google.com",
+    "color": "#33FF57"
+  },
   {
     "id": "bocce",
     "name": "Bocce Club",
