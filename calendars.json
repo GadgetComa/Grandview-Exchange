@@ -78,6 +78,12 @@
     "color": "#FF00FF"
   },
   {
+    "id": "jewish",
+    "name": "Jewish Congregation",
+    "googleCalendarId": "f372c77dd597353e9b2205f2e55441e4873d18d9ee15414d92987b75a38b8b21@group.calendar.google.com",
+    "color": "#FF00FF"
+  },
+  {
     "id": "kcart",
     "name": "Kim Cohen Art Club",
     "googleCalendarId": "msknbko5rg50vkf4dobndrd7gs8ucs55@import.calendar.google.com",
