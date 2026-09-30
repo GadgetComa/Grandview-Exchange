@@ -11,7 +11,7 @@
     "googleCalendarId": "2bb13c5b1b45cd47b9ce9c091ab3bcd2c84f1dc64b134dc6b3168d926682c87c@group.calendar.google.com",
     "color": "#33FF57"
   },
-    {
+  {
     "id": "bible",
     "name": "Bible Study",
     "googleCalendarId": "7cd4c02596d05b035b5666d1a899def71c560c92ff14918f8aae71924f09e255@group.calendar.google.com",
@@ -96,16 +96,34 @@
     "color": "#008000"
   },
   {
+    "id": "medical",
+    "name": "Medical Center",
+    "googleCalendarId": "5ab6416ce3acfcd88f17ceea5498188ae75e8882d44931e1c3a35e24070c15e4@group.calendar.google.com",
+    "color": "#008000"
+  },
+  {
     "id": "movie",
     "name": "Movie Club",
     "googleCalendarId": "lcqp8gno1dtteuujldb7qu9feobiuvrf@import.calendar.google.com",
     "color": "#008000"
-  },  
+  },
   {
-	"id": "photography",
-	"name": "Photography Club",
-	"googleCalendarId": "u027l8h4pcm33g55t0seims6h5hu8k8l@import.calendar.google.com",
-	"color": "#00FFFF"
+    "id": "photography",
+    "name": "Photography Club",
+    "googleCalendarId": "u027l8h4pcm33g55t0seims6h5hu8k8l@import.calendar.google.com",
+    "color": "#00FFFF"
+  },
+  {
+    "id": "pickleball",
+    "name": "Pickleball Club",
+    "googleCalendarId": "6fcbf52e18b15fac4aedb7289c0d8278afd779415fafcfe04d1fdd7deb746329@group.calendar.google.com",
+    "color": "#00FFFF"
+  },
+  {
+    "id": "rac",
+    "name": "Resident Advisory Council",
+    "googleCalendarId": "8df68ffee8d39debb0d8d4d73a7d51c725c8a42a5d0eb5b02b971263103cc2be@group.calendar.google.com",
+    "color": "#000080"
   },
   {
     "id": "ressvcs",
@@ -138,4 +156,3 @@
     "color": "#800080"
   }
 ]
-
