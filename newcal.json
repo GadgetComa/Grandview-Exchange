@@ -4,5 +4,17 @@
     "name": "Grandview Events",
     "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBl0_uzGG220ABhk4yVF49Lqth_4D51oOz9aiM2Sn6SW9IQlgj5605VqCuAbmLEF6XA",
     "color": "#FF5733"
+  },
+  {
+    "id": "arts",
+    "name": "Arts and Crafts",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBmXEMwRGdlGxLD-SEmoEn-f1mrc5A9V16URZe-xent0FKsruGUZ0wa0udr9vnv59NA",
+    "color": "#FF5733"
+  },
+  {
+    "id": "bible",
+    "name": "Bible Study",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBkS-MGJj9q6f9rOvywDzAcU2qWUvwha9gPh592cPaP5ukkzYXowvSnEgUN8dx8TgKk",
+    "color": "#FF5733"
   }
 ]
