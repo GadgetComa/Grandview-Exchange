@@ -219,11 +219,9 @@
             /* INITIALIZE FULLCALENDAR */
             const calendarEl = document.getElementById("calendar");
 
-            // Resolve global plugin reference safely to prevent 'undefined is not an object (evaluating o.name)'
-            const iCalPlugin = window.FullCalendarICalendar || (window.FullCalendar && FullCalendar.ICalendar) || (window.FullCalendar && FullCalendar.iCalendarPlugin);
-
+            // plugins array is omitted here because @fullcalendar/icalendar automatically
+            // registers itself globally when included via CDN script tag
             const calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: iCalPlugin ? [iCalPlugin] : [],
                 initialView: "listMonth",
                 height: "auto",
                 headerToolbar: {
