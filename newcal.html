@@ -430,9 +430,12 @@
 					rawCalendarUrls[cal.id] = rawUrl;
 
 					// Proxy URL for FullCalendar rendering
-					const proxiedUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
-						rawUrl
-					)}`;
+
+
+// With this:
+const proxiedUrl = `https://corsproxy.io/?${encodeURIComponent(rawUrl)}`;
+
+					
 
 					eventSourceConfigs[cal.id] = {
 						id: cal.id,
