@@ -1,0 +1,158 @@
+[
+  {
+    "id": "grandview",
+    "name": "Grandview Events",
+    "url": "https://calendar.google.com/calendar/ical/grandviewexchangecalendar%40gmail.com/public/basic.ics",
+    "color": "#FF5733"
+  },
+  {
+    "id": "arts",
+    "name": "Arts and Crafts",
+    "url": "https://calendar.google.com/calendar/ical/2bb13c5b1b45cd47b9ce9c091ab3bcd2c84f1dc64b134dc6b3168d926682c87c%40group.calendar.google.com/public/basic.ics",
+    "color": "#33FF57"
+  },
+  {
+    "id": "bible",
+    "name": "Bible Study",
+    "url": "https://calendar.google.com/calendar/ical/7cd4c02596d05b035b5666d1a899def71c560c92ff14918f8aae71924f09e255%40group.calendar.google.com/public/basic.ics",
+    "color": "#33FF57"
+  },
+  {
+    "id": "bocce",
+    "name": "Bocce Club",
+    "url": "https://calendar.google.com/calendar/ical/b4c130c3e917691e68fec55c696619fef0d8ebffbf6a9cada933dfb24cd7eabd%40group.calendar.google.com/public/basic.ics",
+    "color": "#3357FF"
+  },
+  {
+    "id": "books",
+    "name": "Book Clubs",
+    "url": "https://calendar.google.com/calendar/ical/4b4a0b4f8a2a1e370c0c33795e28399dc9194211d568d03cb27032a1f1385e4c%40group.calendar.google.com/public/basic.ics",
+    "color": "#40E0D0"
+  },
+  {
+    "id": "canasta",
+    "name": "Canasta Club",
+    "url": "https://calendar.google.com/calendar/ical/d9eu0a3utdkjuif2nvaqph6s8blf9npo%40import.calendar.google.com/public/basic.ics",
+    "color": "#FF33A1"
+  },
+  {
+    "id": "cards",
+    "name": "Cards and Conversation",
+    "url": "https://calendar.google.com/calendar/ical/c580ihsugtlhejmn6rsur56f9egn28an%40import.calendar.google.com/public/basic.ics",
+    "color": "#FF7F50"
+  },
+  {
+    "id": "caregiver",
+    "name": "Caregiver Support",
+    "url": "https://calendar.google.com/calendar/ical/cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e%40group.calendar.google.com/public/basic.ics",
+    "color": "#A133FF"
+  },
+  {
+    "id": "itclub",
+    "name": "Computer/IT Club",
+    "url": "https://calendar.google.com/calendar/ical/d4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235%40group.calendar.google.com/public/basic.ics",
+    "color": "#33A1FF"
+  },
+  {
+    "id": "fitness",
+    "name": "Fitness",
+    "url": "https://calendar.google.com/calendar/ical/6414f0cca63a5a4e8d8b0af9e9bdf0c4fa6137d48b2e498b9629646cd0eba3c9%40group.calendar.google.com/public/basic.ics",
+    "color": "#FFD700"
+  },
+  {
+    "id": "genealogy",
+    "name": "Genealogy Club",
+    "url": "https://calendar.google.com/calendar/ical/544f8b9773de68ddbd8094ad8ff0847da697a2291ea3ec52ca77bece6c604a75%40group.calendar.google.com/public/basic.ics",
+    "color": "#A133FF"
+  },
+  {
+    "id": "history",
+    "name": "History Club",
+    "url": "https://calendar.google.com/calendar/ical/e6b52ca8f8bbb723d82bcffff25d666c9c5fd1f858af8c04acc261e6a097642d%40group.calendar.google.com/public/basic.ics",
+    "color": "#00FFFF"
+  },
+  {
+    "id": "interest",
+    "name": "Interest Groups",
+    "url": "https://calendar.google.com/calendar/ical/109ee78a6f713cf7f2c33aed20f96dac6c31c7c159d873e45b7c2180bba64d5d%40group.calendar.google.com/public/basic.ics",
+    "color": "#FF00FF"
+  },
+  {
+    "id": "jewish",
+    "name": "Jewish Congregation",
+    "url": "https://calendar.google.com/calendar/ical/f372c77dd597353e9b2205f2e55441e4873d18d9ee15414d92987b75a38b8b21%40group.calendar.google.com/public/basic.ics",
+    "color": "#FF00FF"
+  },
+  {
+    "id": "kcart",
+    "name": "Kim Cohen Art Club",
+    "url": "https://calendar.google.com/calendar/ical/msknbko5rg50vkf4dobndrd7gs8ucs55%40import.calendar.google.com/public/basic.ics",
+    "color": "#800000"
+  },
+  {
+    "id": "mahjongg",
+    "name": "Mah Jongg Club",
+    "url": "https://calendar.google.com/calendar/ical/0600556da20bf5b6a09423771a1b4648fcd42be6eb2d89ec5af163985a07b65a%40group.calendar.google.com/public/basic.ics",
+    "color": "#008000"
+  },
+  {
+    "id": "medical",
+    "name": "Medical Center",
+    "url": "https://calendar.google.com/calendar/ical/5ab6416ce3acfcd88f17ceea5498188ae75e8882d44931e1c3a35e24070c15e4%40group.calendar.google.com/public/basic.ics",
+    "color": "#008000"
+  },
+  {
+    "id": "movie",
+    "name": "Movie Club",
+    "url": "https://calendar.google.com/calendar/ical/lcqp8gno1dtteuujldb7qu9feobiuvrf%40import.calendar.google.com/public/basic.ics",
+    "color": "#008000"
+  },
+  {
+    "id": "photography",
+    "name": "Photography Club",
+    "url": "https://calendar.google.com/calendar/ical/u027l8h4pcm33g55t0seims6h5hu8k8l%40import.calendar.google.com/public/basic.ics",
+    "color": "#00FFFF"
+  },
+  {
+    "id": "pickleball",
+    "name": "Pickleball Club",
+    "url": "https://calendar.google.com/calendar/ical/6fcbf52e18b15fac4aedb7289c0d8278afd779415fafcfe04d1fdd7deb746329%40group.calendar.google.com/public/basic.ics",
+    "color": "#00FFFF"
+  },
+  {
+    "id": "rac",
+    "name": "Resident Advisory Council",
+    "url": "https://calendar.google.com/calendar/ical/8df68ffee8d39debb0d8d4d73a7d51c725c8a42a5d0eb5b02b971263103cc2be%40group.calendar.google.com/public/basic.ics",
+    "color": "#000080"
+  },
+  {
+    "id": "ressvcs",
+    "name": "Resident Services",
+    "url": "https://calendar.google.com/calendar/ical/0e4ab0bc0f1e58403601174fa8dc8978346a80fbd2db6e9af8e5736ce68621fd%40group.calendar.google.com/public/basic.ics",
+    "color": "#000080"
+  },
+  {
+    "id": "shuttle",
+    "name": "Shuttle Schedule",
+    "url": "https://calendar.google.com/calendar/ical/dab278c7c3e3cca83f843f45d0db18c8d879505233778ad199f48e0d6d2407d4%40group.calendar.google.com/public/basic.ics",
+    "color": "#000080"
+  },
+  {
+    "id": "speaker",
+    "name": "Speaker Presentation",
+    "url": "https://calendar.google.com/calendar/ical/3d2cea04a3553108cd39768aa1fe619f854ffa34dac90c0206c395c7d2b91f2b%40group.calendar.google.com/public/basic.ics",
+    "color": "#808000"
+  },
+  {
+    "id": "mobility",
+    "name": "Transportation Club",
+    "url": "https://calendar.google.com/calendar/ical/cbsm17e3g2mvn0g80ogdlmo13o6qfrn2%40import.calendar.google.com/public/basic.ics",
+    "color": "#FF8C00"
+  },
+  {
+    "id": "tvclub",
+    "name": "TV Club",
+    "url": "https://calendar.google.com/calendar/ical/1a4620164a980e3cf9adbacc780e5451b5635ccf0bd2c61bea93146ee8c99926%40group.calendar.google.com/public/basic.ics",
+    "color": "#800080"
+  }
+]

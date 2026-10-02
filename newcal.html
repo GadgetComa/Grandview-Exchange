@@ -70,7 +70,7 @@
 				<div class="sidebar-item">
 					<h3>Show Calendars</h3>
 					<div id="calendar-checkboxes-container" style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-						<!-- Dynamically generated via JS from calendars.json -->
+						<!-- Dynamically generated via JS from newcal.json -->
 					</div>
 					<hr style="margin: var(--space-sm) 0;">
 					<label style="font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 600; cursor: pointer;">
@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     --------------------------------*/
     let calendarConfigs = [];
     try {
-        const res = await fetch('calendars.json');
-        if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch calendars.json`);
+        const res = await fetch('newcal.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch newcal.json`);
         calendarConfigs = await res.json();
     } catch (err) {
         console.error("Calendar initialization error:", err);
@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 					<strong>Select a calendar:</strong>
 				</label>
 				<select id="calendarSelect" class="modal-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
-					<!-- Dynamically generated via JS from calendars.json -->
+					<!-- Dynamically generated via JS from newcal.json -->
 				</select>
 			</div>
 
