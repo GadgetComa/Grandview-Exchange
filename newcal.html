@@ -226,261 +226,6 @@
 			</p>
 		</footer>
 
-		<script>
-			document.addEventListener("DOMContentLoaded", async function () {
-				/* ------------------------------
-       DYNAMIC COLOR GENERATOR
-    --------------------------------*/
-				function generateColor(index, total) {
-					const hue = (index * (360 / Math.max(total, 1)) + 15) % 360;
-					return `hsl(${Math.round(hue)}, 70%, 45%)`;
-				}
-
-				/* ------------------------------
-       FETCH CALENDAR CONFIGURATION
-    --------------------------------*/
-				let calendarConfigs = [];
-				try {
-					const res = await fetch("newcal.json");
-					if (!res.ok)
-						throw new Error(
-							`HTTP ${res.status}: Failed to fetch newcal.json`
-						);
-					calendarConfigs = await res.json();
-				} catch (err) {
-					console.error("Calendar initialization error:", err);
-					document.getElementById(
-						"calendar"
-					).innerHTML = `<div style="color: red; padding: 20px; font-weight: bold;">
-                Error loading calendar configurations. If testing locally, please run through a local web server (e.g., Live Server or python -m http.server).
-             </div>`;
-					return;
-				}
-
-				/* ------------------------------
-       BUILD SOURCES & UI ELEMENTS
-    --------------------------------*/
-				const eventSourceConfigs = {};
-				const subscribeLinks = {};
-				const container = document.getElementById(
-					"calendar-checkboxes-container"
-				);
-				const selectDropdown =
-					document.getElementById("calendarSelect");
-
-				container.innerHTML = "";
-				selectDropdown.innerHTML = "";
-
-				calendarConfigs.forEach((cal, idx) => {
-					const assignedColor =
-						cal.color && /^#[0-9A-F]{6}$/i.test(cal.color)
-							? cal.color
-							: generateColor(idx, calendarConfigs.length);
-
-					// Update it to wrap the URL in a CORS proxy:
-					const rawUrl = (cal.url || cal.icsUrl || "").replace(
-						/^webcal:\/\//i,
-						"https://"
-					);
-					const icsUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
-						rawUrl
-					)}`;
-
-					eventSourceConfigs[cal.id] = {
-						id: cal.id,
-						url: icsUrl,
-						format: "ics",
-						color: assignedColor,
-					};
-
-					subscribeLinks[cal.id] = icsUrl;
-
-					// Create Checkbox UI
-					const label = document.createElement("label");
-					label.style.cssText =
-						"font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;";
-					label.innerHTML = `
-            <input type="checkbox" class="cal-toggle" data-cal="${cal.id}" checked style="width: 16px; height: 16px; accent-color: ${assignedColor};"> 
-            ${cal.name}
-        `;
-					container.appendChild(label);
-
-					// Create Subscription Option
-					const option = document.createElement("option");
-					option.value = cal.id;
-					option.textContent = cal.name;
-					selectDropdown.appendChild(option);
-				});
-
-				/* ------------------------------
-       FULLCALENDAR MOUNTING ENGINE
-    --------------------------------*/
-				const calendarEl = document.getElementById("calendar");
-
-				const calendar = new FullCalendar.Calendar(calendarEl, {
-					initialView: "listMonth",
-					height: "auto",
-					initialDate: new Date(),
-					validRange: {
-						start: new Date(),
-					},
-					headerToolbar: {
-						left: "prev",
-						center: "title",
-						right: "next",
-					},
-					buttonText: {
-						prev: "< Previous",
-						next: "Next >",
-					},
-					eventSources: Object.values(eventSourceConfigs),
-					eventClick: function (info) {
-						info.jsEvent.preventDefault();
-						const event = info.event;
-
-						document.getElementById("modalTitle").textContent =
-							event.title;
-						document.getElementById("modalDate").textContent =
-							event.start.toLocaleString("en-US", {
-								weekday: "long",
-								month: "long",
-								day: "numeric",
-								hour: "numeric",
-								minute: "2-digit",
-							});
-						document.getElementById("modalLocation").textContent =
-							event.extendedProps.location
-								? `Location: ${event.extendedProps.location}`
-								: "";
-
-						let desc = event.extendedProps.description || "";
-						desc = desc.replace(
-							/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi,
-							""
-						);
-						desc = desc.includes("<a ")
-							? desc.replace(/\n/g, "<br>")
-							: desc
-									.replace(
-										/(https?:\/\/[^\s]+)/g,
-										'<a href="$1" target="_blank" rel="noopener">$1</a>'
-									)
-									.replace(/\n/g, "<br>");
-
-						document.getElementById("modalDescription").innerHTML =
-							desc;
-						document.getElementById("eventModal").style.display =
-							"flex";
-					},
-				});
-
-				calendar.render();
-
-				/* ------------------------------
-       DYNAMIC ATTACHMENT OF LISTENERS
-    --------------------------------*/
-				const individualToggles =
-					document.querySelectorAll(".cal-toggle");
-				const checkAllBox = document.getElementById("check-all-cals");
-				const uncheckAllBox =
-					document.getElementById("uncheck-all-cals");
-
-				individualToggles.forEach((cb) => {
-					cb.addEventListener("change", function () {
-						const id = this.dataset.cal;
-						const existing = calendar.getEventSourceById(id);
-
-						if (this.checked) {
-							if (!existing && eventSourceConfigs[id])
-								calendar.addEventSource(eventSourceConfigs[id]);
-						} else {
-							if (existing) existing.remove();
-						}
-
-						const checkedCount = document.querySelectorAll(
-							".cal-toggle:checked"
-						).length;
-						checkAllBox.checked =
-							checkedCount === individualToggles.length;
-						uncheckAllBox.checked = checkedCount === 0;
-					});
-				});
-
-				function setAllCalendarsState(shouldCheck) {
-					individualToggles.forEach((cb) => {
-						if (cb.checked !== shouldCheck) {
-							cb.checked = shouldCheck;
-							const id = cb.dataset.cal;
-							const existing = calendar.getEventSourceById(id);
-
-							if (shouldCheck) {
-								if (!existing && eventSourceConfigs[id])
-									calendar.addEventSource(
-										eventSourceConfigs[id]
-									);
-							} else {
-								if (existing) existing.remove();
-							}
-						}
-					});
-				}
-
-				checkAllBox.addEventListener("change", function () {
-					if (this.checked) {
-						uncheckAllBox.checked = false;
-						setAllCalendarsState(true);
-					}
-				});
-
-				uncheckAllBox.addEventListener("change", function () {
-					if (this.checked) {
-						checkAllBox.checked = false;
-						setAllCalendarsState(false);
-					}
-				});
-
-				// Sync initial checkbox state on load
-				if (individualToggles.length > 0) {
-					checkAllBox.checked =
-						document.querySelectorAll(".cal-toggle:checked")
-							.length === individualToggles.length;
-				}
-
-				document
-					.querySelectorAll('input[name="view"]')
-					.forEach((radio) => {
-						radio.addEventListener("change", () =>
-							calendar.changeView(radio.value)
-						);
-					});
-
-				/* ------------------------------
-       MODAL & PRINT LISTENERS
-    --------------------------------*/
-				document.getElementById("print-calendar").onclick = (e) => {
-					e.preventDefault();
-					calendar.changeView("listMonth");
-					setTimeout(() => window.print(), 200);
-				};
-
-				const subscribeModal =
-					document.getElementById("subscribeModal");
-				document.getElementById("open-subscribe-modal").onclick = (
-					e
-				) => {
-					e.preventDefault();
-					subscribeModal.style.display = "flex";
-				};
-				document.getElementById("subscribeModalClose").onclick = () => {
-					subscribeModal.style.display = "none";
-				};
-				document.getElementById("modalClose").onclick = () => {
-					document.getElementById("eventModal").style.display =
-						"none";
-				};
-			});
-		</script>
-
 		<div id="eventModal" class="modal-overlay" style="display: none">
 			<div class="modal-card">
 				<button class="modal-close" id="modalClose">×</button>
@@ -633,5 +378,260 @@
 				</button>
 			</div>
 		</div>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", async function () {
+				function generateColor(index, total) {
+					const hue = (index * (360 / Math.max(total, 1)) + 15) % 360;
+					return `hsl(${Math.round(hue)}, 70%, 45%)`;
+				}
+
+				let calendarConfigs = [];
+				try {
+					const res = await fetch("newcal.json");
+					if (!res.ok)
+						throw new Error(
+							`HTTP ${res.status}: Failed to fetch newcal.json`
+						);
+					calendarConfigs = await res.json();
+				} catch (err) {
+					console.error("Calendar initialization error:", err);
+					document.getElementById(
+						"calendar"
+					).innerHTML = `<div style="color: red; padding: 20px; font-weight: bold;">
+                Error loading calendar configurations. Please verify newcal.json exists and is valid JSON.
+             </div>`;
+					return;
+				}
+
+				const eventSourceConfigs = {};
+				const rawCalendarUrls = {};
+				const container = document.getElementById(
+					"calendar-checkboxes-container"
+				);
+				const selectDropdown =
+					document.getElementById("calendarSelect");
+
+				if (container) container.innerHTML = "";
+				if (selectDropdown) selectDropdown.innerHTML = "";
+
+				calendarConfigs.forEach((cal, idx) => {
+					const assignedColor =
+						cal.color && /^#[0-9A-F]{6}$/i.test(cal.color)
+							? cal.color
+							: generateColor(idx, calendarConfigs.length);
+
+					const rawUrl = (cal.url || cal.icsUrl || "").replace(
+						/^webcal:\/\//i,
+						"https://"
+					);
+					
+					// Store raw URL for subscriptions
+					rawCalendarUrls[cal.id] = rawUrl;
+
+					// Proxy URL for FullCalendar rendering
+					const proxiedUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(
+						rawUrl
+					)}`;
+
+					eventSourceConfigs[cal.id] = {
+						id: cal.id,
+						url: proxiedUrl,
+						format: "ics",
+						color: assignedColor,
+					};
+
+					// Populate Sidebar Checkboxes
+					if (container) {
+						const label = document.createElement("label");
+						label.style.cssText =
+							"font-size: 1.15rem; display: inline-flex; align-items: center; gap: var(--space-sm); color: var(--text-body); font-weight: 500; cursor: pointer;";
+						label.innerHTML = `
+							<input type="checkbox" class="cal-toggle" data-cal="${cal.id}" checked style="width: 16px; height: 16px; accent-color: ${assignedColor};"> 
+							${cal.name}
+						`;
+						container.appendChild(label);
+					}
+
+					// Populate Modal Select Option
+					if (selectDropdown) {
+						const option = document.createElement("option");
+						option.value = cal.id;
+						option.textContent = cal.name;
+						selectDropdown.appendChild(option);
+					}
+				});
+
+				/* FULLCALENDAR INIT */
+				const calendarEl = document.getElementById("calendar");
+				const calendar = new FullCalendar.Calendar(calendarEl, {
+					initialView: "listMonth",
+					height: "auto",
+					initialDate: new Date(),
+					validRange: { start: new Date() },
+					headerToolbar: {
+						left: "prev",
+						center: "title",
+						right: "next",
+					},
+					buttonText: {
+						prev: "< Previous",
+						next: "Next >",
+					},
+					eventSources: Object.values(eventSourceConfigs),
+					eventClick: function (info) {
+						info.jsEvent.preventDefault();
+						const event = info.event;
+
+						document.getElementById("modalTitle").textContent = event.title;
+						document.getElementById("modalDate").textContent =
+							event.start.toLocaleString("en-US", {
+								weekday: "long",
+								month: "long",
+								day: "numeric",
+								hour: "numeric",
+								minute: "2-digit",
+							});
+						document.getElementById("modalLocation").textContent =
+							event.extendedProps.location
+								? `Location: ${event.extendedProps.location}`
+								: "";
+
+						let desc = event.extendedProps.description || "";
+						desc = desc.replace(/<(script|style)[^>]*>[\s\S]*?<\/(script|style)>/gi, "");
+						desc = desc.includes("<a ")
+							? desc.replace(/\n/g, "<br>")
+							: desc.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>').replace(/\n/g, "<br>");
+
+						document.getElementById("modalDescription").innerHTML = desc;
+						document.getElementById("eventModal").style.display = "flex";
+					},
+				});
+
+				calendar.render();
+
+				/* CHECKBOX TOGGLE LISTENERS */
+				const individualToggles = document.querySelectorAll(".cal-toggle");
+				const checkAllBox = document.getElementById("check-all-cals");
+				const uncheckAllBox = document.getElementById("uncheck-all-cals");
+
+				individualToggles.forEach((cb) => {
+					cb.addEventListener("change", function () {
+						const id = this.dataset.cal;
+						const existing = calendar.getEventSourceById(id);
+
+						if (this.checked) {
+							if (!existing && eventSourceConfigs[id])
+								calendar.addEventSource(eventSourceConfigs[id]);
+						} else {
+							if (existing) existing.remove();
+						}
+
+						const checkedCount = document.querySelectorAll(".cal-toggle:checked").length;
+						if (checkAllBox) checkAllBox.checked = checkedCount === individualToggles.length;
+						if (uncheckAllBox) uncheckAllBox.checked = checkedCount === 0;
+					});
+				});
+
+				function setAllCalendarsState(shouldCheck) {
+					individualToggles.forEach((cb) => {
+						if (cb.checked !== shouldCheck) {
+							cb.checked = shouldCheck;
+							const id = cb.dataset.cal;
+							const existing = calendar.getEventSourceById(id);
+
+							if (shouldCheck) {
+								if (!existing && eventSourceConfigs[id])
+									calendar.addEventSource(eventSourceConfigs[id]);
+							} else {
+								if (existing) existing.remove();
+							}
+						}
+					});
+				}
+
+				if (checkAllBox) {
+					checkAllBox.addEventListener("change", function () {
+						if (this.checked) {
+							if (uncheckAllBox) uncheckAllBox.checked = false;
+							setAllCalendarsState(true);
+						}
+					});
+				}
+
+				if (uncheckAllBox) {
+					uncheckAllBox.addEventListener("change", function () {
+						if (this.checked) {
+							if (checkAllBox) checkAllBox.checked = false;
+							setAllCalendarsState(false);
+						}
+					});
+				}
+
+				if (individualToggles.length > 0 && checkAllBox) {
+					checkAllBox.checked = document.querySelectorAll(".cal-toggle:checked").length === individualToggles.length;
+				}
+
+				document.querySelectorAll('input[name="view"]').forEach((radio) => {
+					radio.addEventListener("change", () => calendar.changeView(radio.value));
+				});
+
+				/* MODAL & SUBSCRIBE HANDLERS */
+				const printBtn = document.getElementById("print-calendar");
+				if (printBtn) {
+					printBtn.onclick = (e) => {
+						e.preventDefault();
+						calendar.changeView("listMonth");
+						setTimeout(() => window.print(), 200);
+					};
+				}
+
+				const subscribeModal = document.getElementById("subscribeModal");
+				const openSubBtn = document.getElementById("open-subscribe-modal");
+				if (openSubBtn) {
+					openSubBtn.onclick = (e) => {
+						e.preventDefault();
+						subscribeModal.style.display = "flex";
+					};
+				}
+
+				const closeSubBtn = document.getElementById("subscribeModalClose");
+				if (closeSubBtn) {
+					closeSubBtn.onclick = () => {
+						subscribeModal.style.display = "none";
+					};
+				}
+
+				const closeEventBtn = document.getElementById("modalClose");
+				if (closeEventBtn) {
+					closeEventBtn.onclick = () => {
+						document.getElementById("eventModal").style.display = "none";
+					};
+				}
+
+				/* SUBSCRIBE BUTTON CLICK ACTION */
+				const subscribeNowBtn = document.getElementById("subscribeNow");
+				if (subscribeNowBtn) {
+					subscribeNowBtn.onclick = () => {
+						const selectedCalId = selectDropdown.value;
+						const selectedPlatform = document.querySelector('input[name="subPlatform"]:checked').value;
+						const targetUrl = rawCalendarUrls[selectedCalId];
+
+						if (!targetUrl) return;
+
+						let subUrl = targetUrl;
+						if (selectedPlatform === "google") {
+							subUrl = `https://calendar.google.com/calendar/render?cid=${encodeURIComponent(targetUrl)}`;
+						} else if (selectedPlatform === "apple") {
+							subUrl = targetUrl.replace(/^https?:\/\//i, "webcal://");
+						} else if (selectedPlatform === "outlook") {
+							subUrl = `https://outlook.live.com/calendar/0/addcalendar?url=${encodeURIComponent(targetUrl)}`;
+						}
+
+						window.open(subUrl, "_blank");
+					};
+				}
+			});
+		</script>
 	</body>
 </html>
