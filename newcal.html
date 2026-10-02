@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,7 +74,7 @@
             border-radius: 8px;
             max-width: 500px;
             width: 90%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             position: relative;
         }
 
@@ -88,6 +89,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="controls-wrapper">
@@ -128,7 +130,7 @@
             <button class="modal-close" id="subscribeModalClose">&times;</button>
             <h3>Subscribe to Calendar</h3>
             <p>Select a calendar and platform to add events to your app:</p>
-            
+
             <div style="margin-bottom: 15px;">
                 <label for="calendarSelect">Calendar: </label>
                 <select id="calendarSelect" style="width: 100%; padding: 8px; margin-top: 5px;"></select>
@@ -140,7 +142,9 @@
                 <label><input type="radio" name="subPlatform" value="outlook"> Outlook Web</label>
             </div>
 
-            <button id="subscribeNow" style="width: 100%; padding: 10px; background: #0066cc; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Subscribe Now</button>
+            <button id="subscribeNow"
+                style="width: 100%; padding: 10px; background: #0066cc; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Subscribe
+                Now</button>
         </div>
     </div>
 
@@ -160,7 +164,7 @@
                 calendarConfigs = await res.json();
             } catch (err) {
                 console.error("Calendar initialization error:", err);
-                document.getElementById("calendar").innerHTML = 
+                document.getElementById("calendar").innerHTML =
                     `<div style="color: red; padding: 20px; border: 1px solid red; font-family: sans-serif;">
                         <strong>Calendar Initialization Error:</strong> ${err.message}<br><br>
                         <em>Check browser console or verify newcal.json path/format.</em>
@@ -214,8 +218,12 @@
 
             /* INITIALIZE FULLCALENDAR */
             const calendarEl = document.getElementById("calendar");
+
+            // Resolve global plugin reference safely to prevent 'undefined is not an object (evaluating o.name)'
+            const iCalPlugin = window.FullCalendarICalendar || (window.FullCalendar && FullCalendar.ICalendar) || (window.FullCalendar && FullCalendar.iCalendarPlugin);
+
             const calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [FullCalendar.iCalendarPlugin],
+                plugins: iCalPlugin ? [iCalPlugin] : [],
                 initialView: "listMonth",
                 height: "auto",
                 headerToolbar: {
@@ -375,4 +383,5 @@
         });
     </script>
 </body>
+
 </html>
