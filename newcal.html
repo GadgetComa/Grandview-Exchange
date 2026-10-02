@@ -158,16 +158,13 @@
                     ? cal.color
                     : generateColor(idx, calendarConfigs.length);
 
-                // Store direct https:// link
                 const rawUrl = cal.url || '';
                 rawCalendarUrls[cal.id] = rawUrl;
 
-                // Bypasses CORS via AllOrigins raw proxy
-                const proxiedUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rawUrl)}`;
-
+                // Direct fetch without proxy
                 eventSourceConfigs[cal.id] = {
                     id: cal.id,
-                    url: proxiedUrl,
+                    url: rawUrl,
                     format: 'ics',
                     color: assignedColor
                 };
