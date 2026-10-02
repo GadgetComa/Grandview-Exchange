@@ -20,13 +20,13 @@
   {
     "id": "bocce",
     "name": "Bocce Club",
-    "url": "webcal://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBnIZSL3KWEcSGzxZBvtnd6GhlS4ppFZVMCUyL7EcRXxrsTwqvZwuouTfpIk5wBppMA",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBnIZSL3KWEcSGzxZBvtnd6GhlS4ppFZVMCUyL7EcRXxrsTwqvZwuouTfpIk5wBppMA",
     "color": "#3357FF"
   },
   {
     "id": "books",
     "name": "Book Clubs",
-    "url": "webcal://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBlozpQwcvDrlL3b8nP0fUTQD0EoWlP-mMVoqTcbEAL-UOBVPu1ossyYxsJ-gI4nATk",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBlozpQwcvDrlL3b8nP0fUTQD0EoWlP-mMVoqTcbEAL-UOBVPu1ossyYxsJ-gI4nATk",
     "color": "#40E0D0"
   },
   {
@@ -38,19 +38,19 @@
   {
     "id": "cards",
     "name": "Cards and Conversation",
-    "url": "https://GrandviewExchange.groups.io/g/cardsandconversations/ics/15347662/722727635/feed.ics",
+    "url": "https://GrandviewExchange.groups.io/g/cardsandconversations/ics/15470084/1484935186/feed.ics",
     "color": "#FF7F50"
   },
   {
     "id": "caregiver",
     "name": "Caregiver Support",
-    "url": "cc70e98ddc6a791a08c5a2579b0454a4a3ef0f32b63278f826458a491121c90e@group.calendar.google.com",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBlAvmeQt3-IK-g9U9aAqSNFyhWmZizDsTVKhDfW0xAkpF34rWAVi9Yo-egj0473PCM",
     "color": "#A133FF"
   },
   {
     "id": "itclub",
     "name": "Computer/IT Club",
-    "url": "d4bcf6eb1219625344c2a4ce5c6df668079606cc68376546e709d00b95b51235@group.calendar.google.com",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBlTZCe6XzFQcWrAtvehKWIJkRSC-F8CCnuKbI_fKtlKI53Q1Q_MtqJ-h9BLZuvbRmc",
     "color": "#33A1FF"
   },
   {
