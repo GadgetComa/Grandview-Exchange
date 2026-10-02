@@ -81,7 +81,7 @@
                     <h3>Show Calendars</h3>
                     <div id="calendar-checkboxes-container"
                         style="display: flex; flex-direction: column; gap: var(--space-sm); margin-top: var(--space-xs);">
-                        <!-- Dynamically generated via JS from newcal.json -->
+                        <!-- Dynamically generated via JS from calendars.json -->
                     </div>
                     <hr style="margin: var(--space-sm) 0;">
                     <label
@@ -137,8 +137,8 @@
             --------------------------------*/
             let calendarConfigs = [];
             try {
-                const res = await fetch('newcal.json');
-                if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch newcal.json`);
+                const res = await fetch('calendars.json');
+                if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch calendars.json`);
                 calendarConfigs = await res.json();
             } catch (err) {
                 console.error("Calendar initialization error:", err);
@@ -367,7 +367,7 @@
                 </label>
                 <select id="calendarSelect" class="modal-select"
                     style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border); font-size: 1rem;">
-                    <!-- Dynamically generated via JS from newcal.json -->
+                    <!-- Dynamically generated via JS from calendars.json -->
                 </select>
             </div>
 
