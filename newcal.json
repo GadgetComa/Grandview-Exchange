@@ -1,15 +1,8 @@
 [
   {
-    "id": "grandview",
-    "name": "Grandview Events",
-    "url": "https://outlook.live.com/owa/calendar/00000000-0000-0000-0000-000000000000/21b5605c-90fb-42e3-8ebf-9fb3c8eb48c2/cid-1DA816DCDD5F6DED/calendar.ics",
+    "id": "testing",
+    "name": "Testing",
+    "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBl0_uzGG220ABhk4yVF49Lqth_4D51oOz9aiM2Sn6SW9IQlgj5605VqCuAbmLEF6XA",
     "color": "#FF5733"
-  },
-    {
-      "id": "testing",
-      "name": "Testing",
-      "url": "https://p59-caldav.icloud.com/published/2/MTYyNTMyMjIyMTYyNTMyMhUslaG4P2zIXvBAw0QnMBl0_uzGG220ABhk4yVF49Lqth_4D51oOz9aiM2Sn6SW9IQlgj5605VqCuAbmLEF6XA",
-      "color": "#FF5733"
-    }
+  }
 ]
-  
