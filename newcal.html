@@ -11,10 +11,14 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/main.css" />
 
-    <!-- iCal Dependencies -->
-    <script src="https://unpkg.com/ical.js@1.5.0/build/ical.min.js"></script>
-    <script src="https://unpkg.com/fullcalendar@6.1.10/index.global.min.js"></script>
-    <script src="https://unpkg.com/@fullcalendar/icalendar@6.1.10/index.global.min.js"></script>
+    <!-- Preconnect hints for CDN performance -->
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+    <link rel="dns-prefetch" href="https://unpkg.com" />
+
+    <!-- iCal Dependencies with defer to prevent render-blocking -->
+    <script src="https://unpkg.com/ical.js@1.5.0/build/ical.min.js" defer></script>
+    <script src="https://unpkg.com/fullcalendar@6.1.10/index.global.min.js" defer></script>
+    <script src="https://unpkg.com/@fullcalendar/icalendar@6.1.10/index.global.min.js" defer></script>
     <script src="assets/js/global.js" defer></script>
 
 </head>
@@ -117,6 +121,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', async function () {
 
+            // Target your deployed Cloudflare Worker endpoint
+            const PROXY_URL = 'https://calendar-cors-proxy.YOUR-SUBDOMAIN.workers.dev/?url=';
+
             /* ------------------------------
                DYNAMIC COLOR GENERATOR
             --------------------------------*/
@@ -161,10 +168,12 @@
                 const rawUrl = cal.url || '';
                 rawCalendarUrls[cal.id] = rawUrl;
 
-                // Direct fetch without proxy
+                // Wrap the iCloud URL with the proxy URL
+                const proxiedUrl = PROXY_URL + encodeURIComponent(rawUrl);
+
                 eventSourceConfigs[cal.id] = {
                     id: cal.id,
-                    url: rawUrl,
+                    url: proxiedUrl,
                     format: 'ics',
                     color: assignedColor
                 };
