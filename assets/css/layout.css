@@ -325,3 +325,53 @@ body {
   color: var(--text-muted);
   margin: 0;
 }
+
+/* ============================================================
+   MOBILE RESPONSIVE CALENDAR & SIDEBAR FIXES
+============================================================ */
+
+/* FullCalendar Header Toolbar Responsiveness */
+@media (max-width: 768px) {
+
+  /* Stack or shrink header elements gracefully */
+  .fc .fc-toolbar {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.25rem !important;
+    text-align: center;
+  }
+
+  /* Shorten button margins so prev/next don't overlap title */
+  .fc .fc-button {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* Compact FullCalendar cell padding and column text on mobile */
+  .fc .fc-col-header-cell-cushion,
+  .fc .fc-daygrid-day-number {
+    font-size: 0.8rem;
+    padding: 2px !important;
+  }
+
+  .fc-theme-standard td,
+  .fc-theme-standard th {
+    padding: 0 !important;
+  }
+
+  /* Force horizontal scrolling for table-grid view on tiny screens if needed */
+  .fc .fc-view-harness {
+    overflow-x: auto;
+  }
+
+  /* Unified Mobile Sidebar Sizing */
+  .site-sidebar.section-block {
+    padding: var(--space-lg);
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
