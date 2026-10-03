@@ -2,6 +2,21 @@
    GLOBAL LAYOUT SYSTEM
    Grid, Shell, Layout wrappers, and Content Cards
 ============================================================ */
+/* Prevent horizontal overflow scrolling and force layout engine to fit viewport */
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* Prevents iOS Safari from auto-enlarging text */
+}
+
+/* Ensure banner images and headers never push past the mobile viewport */
+.site-header img,
+.site-shell,
+.main-layout-wrapper {
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
 /* ---- Grid Utilities ---- */
 .grid {
