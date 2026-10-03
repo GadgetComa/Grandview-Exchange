@@ -383,4 +383,60 @@ body {
     width: 100%;
     box-sizing: border-box;
   }
+
+  /* ============================================================
+     FULLCALENDAR MOBILE LIST VIEW FIXES
+  ============================================================ */
+  @media (max-width: 768px) {
+
+    /* 1. Reduce card container padding on mobile so content gets max width */
+    .section-block {
+      padding: var(--space-md) var(--space-sm) !important;
+    }
+
+    /* 2. Remove table border-spacing/fixed layout constraints */
+    .fc .fc-list-table {
+      table-layout: auto !important;
+      width: 100% !important;
+    }
+
+    /* 3. Allow event rows to stack or flow cleanly on small screens */
+    .fc .fc-list-event {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      padding: 8px 4px !important;
+      border-bottom: 1px solid var(--border) !important;
+    }
+
+    /* Force time to display nicely above event title */
+    .fc .fc-list-event-time {
+      font-weight: 600 !important;
+      font-size: 0.85rem !important;
+      color: var(--text-muted) !important;
+      padding: 0 0 4px 0 !important;
+      width: auto !important;
+      white-space: nowrap !important;
+    }
+
+    /* Title takes full width below the time with proper spacing */
+    .fc .fc-list-event-title {
+      padding: 0 !important;
+      font-size: 1rem !important;
+      word-break: break-word !important;
+    }
+
+    /* Style dot marker inline with title */
+    .fc .fc-list-event-dot {
+      margin-right: 6px !important;
+      display: inline-block !important;
+    }
+
+    /* 4. Fix date header banner width inside list view */
+    .fc .fc-list-day-cushion {
+      padding: 6px 10px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+    }
+  }
 }
