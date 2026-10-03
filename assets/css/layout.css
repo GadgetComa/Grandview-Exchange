@@ -373,7 +373,7 @@ body {
   /* FullCalendar Table View Responsiveness */
   .fc .fc-view-harness {
     width: 100% !important;
-    overflow-x: auto !important'
+    overflow-x: auto !important;
 
   }
 
