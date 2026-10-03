@@ -2,15 +2,18 @@
    GLOBAL LAYOUT SYSTEM
    Grid, Shell, Layout wrappers, and Content Cards
 ============================================================ */
+
 /* Prevent horizontal overflow scrolling and force layout engine to fit viewport */
-html, body {
+html,
+body {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
-  -webkit-text-size-adjust: 100%; /* Prevents iOS Safari from auto-enlarging text */
+  -webkit-text-size-adjust: 100%;
+  /* Prevents iOS Safari from auto-enlarging text */
 }
 
-/* Ensure banner images and headers never push past the mobile viewport */
+/* Base box-sizing defense for main containers */
 .site-header img,
 .site-shell,
 .main-layout-wrapper {
@@ -35,23 +38,19 @@ html, body {
   gap: var(--space-lg);
 }
 
-@media (max-width: 768px) {
-  .grid-2col {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ---- Structural Shell ---- */
+/* ---- Structural Shell & Header ---- */
 .site-shell {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  box-sizing: border-box;
 }
 
 .site-header {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 var(--space-md);
+  box-sizing: border-box;
 }
 
 .site-header img {
@@ -60,19 +59,43 @@ html, body {
   display: block;
 }
 
-/* ---- Balanced Two-Column Structural Frame ---- */
-.main-layout-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: var(--space-xl);
-  margin-top: var(--space-xl);
-  align-items: start;
-}
-
+/* ---- Mobile Viewport & Width Controls (Screens under 768px) ---- */
 @media (max-width: 768px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Make shell and header slightly narrower on phone screens */
+  .site-shell,
+  .site-header,
+  #site-nav {
+    width: 90%;
+    /* Adjust this percentage to make it narrower (e.g., 88%) or wider (e.g., 94%) */
+    max-width: 540px;
+    /* Cap layout width on larger phone screens */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Keep main layout tracks aligned inside the 90% shell */
   .main-layout-wrapper {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+    width: 100%;
+    margin-top: var(--space-lg);
+  }
+}
+
+/* ---- Balanced Two-Column Structural Frame (Desktop) ---- */
+@media (min-width: 769px) {
+  .main-layout-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+    align-items: start;
   }
 }
 
@@ -104,6 +127,7 @@ html, body {
   padding: 0 var(--space-md);
   width: 100%;
   display: block;
+  box-sizing: border-box;
 }
 
 #site-nav .site-nav-row,
@@ -175,6 +199,7 @@ html, body {
   font-family: 'Lora', serif;
   margin: 0 0 var(--space-xs) 0;
 }
+
 /* ============================================================
    UNIFIED CONTENT & SIDEBAR ITEM SPACING
 ============================================================ */
@@ -244,7 +269,6 @@ html, body {
   margin-bottom: var(--space-xs);
 }
 
-/* Action Links */
 /* Combined Centered Action & Sidebar Links */
 .section-item-action,
 .sidebar-link {
@@ -256,6 +280,7 @@ html, body {
   margin-top: var(--space-sm);
   align-self: center;
 }
+
 .section-item-action:hover,
 .sidebar-link:hover {
   color: var(--teal-dark);
