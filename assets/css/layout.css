@@ -385,58 +385,84 @@ body {
   }
 
   /* ============================================================
-     FULLCALENDAR MOBILE LIST VIEW FIXES
-  ============================================================ */
+   CLEAN & POLISHED MOBILE CALENDAR LIST VIEW
+============================================================ */
   @media (max-width: 768px) {
 
-    /* 1. Reduce card container padding on mobile so content gets max width */
+    /* 1. Reclaim card spacing so content fills the screen gracefully */
     .section-block {
-      padding: var(--space-md) var(--space-sm) !important;
+      padding: var(--space-md) var(--space-xs) !important;
     }
 
-    /* 2. Remove table border-spacing/fixed layout constraints */
-    .fc .fc-list-table {
-      table-layout: auto !important;
-      width: 100% !important;
-    }
-
-    /* 3. Allow event rows to stack or flow cleanly on small screens */
-    .fc .fc-list-event {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: flex-start !important;
-      padding: 8px 4px !important;
-      border-bottom: 1px solid var(--border) !important;
-    }
-
-    /* Force time to display nicely above event title */
-    .fc .fc-list-event-time {
-      font-weight: 600 !important;
-      font-size: 0.85rem !important;
-      color: var(--text-muted) !important;
-      padding: 0 0 4px 0 !important;
-      width: auto !important;
-      white-space: nowrap !important;
-    }
-
-    /* Title takes full width below the time with proper spacing */
-    .fc .fc-list-event-title {
-      padding: 0 !important;
-      font-size: 1rem !important;
-      word-break: break-word !important;
-    }
-
-    /* Style dot marker inline with title */
-    .fc .fc-list-event-dot {
-      margin-right: 6px !important;
-      display: inline-block !important;
-    }
-
-    /* 4. Fix date header banner width inside list view */
+    /* 2. Style date headers cleanly */
     .fc .fc-list-day-cushion {
-      padding: 6px 10px !important;
-      display: flex !important;
-      justify-content: space-between !important;
+      background-color: var(--bg-light, #f4f6f8) !important;
+      padding: 8px 12px !important;
+    }
+
+    .fc .fc-list-day-text,
+    .fc .fc-list-day-side-text {
+      font-family: 'Lora', serif !important;
+      font-weight: 600 !important;
+      color: var(--text-dark) !important;
+      font-size: 1.05rem !important;
+    }
+
+    /* 3. Re-align table cells into a clean 2-column layout */
+    .fc .fc-list-event {
+      display: table-row !important;
+      /* Restore native table row flow */
+      border: none !important;
+    }
+
+    .fc .fc-list-event td {
+      border: none !important;
+      /* Remove unsightly lines under text */
+      padding: 10px 4px !important;
+      vertical-align: top !important;
+      background: transparent !important;
+    }
+
+    /* Compact left column for Time */
+    .fc .fc-list-event-time {
+      width: 28% !important;
+      min-width: 90px !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      color: var(--text-muted) !important;
+      white-space: normal !important;
+      /* Allow 10:00am - 11:00am to stack naturally */
+      line-height: 1.3 !important;
+    }
+
+    /* Color dot cell - tuck neatly next to title */
+    .fc .fc-list-event-graphic {
+      width: 16px !important;
+      padding-right: 0 !important;
+      padding-left: 2px !important;
+    }
+
+    .fc .fc-list-event-dot {
+      border-width: 5px !important;
+      margin-top: 4px !important;
+    }
+
+    /* Title column - clean readable typography */
+    .fc .fc-list-event-title {
+      font-size: 1rem !important;
+      line-height: 1.35 !important;
+      padding-left: 6px !important;
+    }
+
+    .fc .fc-list-event-title a {
+      color: var(--text-dark) !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+    }
+
+    /* Elegant thin separator between items */
+    .fc .fc-list-event+.fc-list-event td {
+      border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
     }
   }
 }
