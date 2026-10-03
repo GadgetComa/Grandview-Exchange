@@ -335,14 +335,15 @@ body {
 
   /* Stack or shrink header elements gracefully */
   .fc .fc-toolbar {
-    flex-direction: column;
-    gap: var(--space-sm);
-    align-items: center;
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: center !important;
   }
 
   .fc .fc-toolbar-title {
-    font-size: 1.25rem !important;
-    text-align: center;
+    font-size: 1.15rem !important;
+    text-align: center !important;
+    width: 100% !important;
   }
 
   /* Shorten button margins so prev/next don't overlap title */
@@ -364,8 +365,16 @@ body {
   }
 
   /* Force horizontal scrolling for table-grid view on tiny screens if needed */
+  .fc .fc-toolbar-chunk {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* FullCalendar Table View Responsiveness */
   .fc .fc-view-harness {
-    overflow-x: auto;
+    width: 100% !important;
+    overflow-x: auto !important'
+
   }
 
   /* Unified Mobile Sidebar Sizing */
