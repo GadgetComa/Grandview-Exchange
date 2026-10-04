@@ -199,6 +199,9 @@
             --------------------------------*/
             const calendarEl = document.getElementById('calendar');
 
+            // Helper to determine compact buttons on small screens
+            const isMobile = window.innerWidth <= 768;
+
             const calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'listMonth',
                 height: 'auto',
@@ -212,8 +215,16 @@
                     right: 'next'
                 },
                 buttonText: {
-                    prev: '< Previous',
-                    next: 'Next >'
+                    prev: '‹ Prev',
+                    next: 'Next ›'
+                },
+                // Dynamically adjust toolbar aspect on window resize
+                windowResize: function (arg) {
+                    if (window.innerWidth <= 768) {
+                        calendar.setOption('buttonText', { prev: '‹', next: '›' });
+                    } else {
+                        calendar.setOption('buttonText', { prev: '‹ Prev', next: 'Next ›' });
+                    }
                 },
                 eventSources: Object.values(eventSourceConfigs),
                 eventClick: function (info) {
@@ -237,7 +248,6 @@
             });
 
             calendar.render();
-
             /* ------------------------------
                DYNAMIC ATTACHMENT OF LISTENERS
             --------------------------------*/
