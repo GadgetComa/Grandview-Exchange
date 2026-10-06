@@ -209,6 +209,11 @@ body {
 /* ============================================================
    UNIFIED CONTENT & SIDEBAR ITEM SPACING
 ============================================================ */
+/* ---- Main Content Area ---- */
+.main-content-area {
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* Main Section Blocks & Sidebar Container Cards */
 .section-block {
