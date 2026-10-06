@@ -118,6 +118,12 @@ body {
   }
 }
 
+/* ---- Full-Width Page Layout Modifier ---- */
+.main-layout-wrapper.full-width-layout {
+  display: block;
+  width: 100%;
+}
+
 /* ============================================================
    GLOBAL NAVIGATION BAR (Breadcrumbs & Action Buttons)
 ============================================================ */
