@@ -1,0 +1,71 @@
+/* ============================================
+   Simple / Accessible View Styling
+============================================ */
+body.simple-view {
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-size: 1.35rem !important;
+  line-height: 1.6 !important;
+}
+
+body.simple-view p,
+body.simple-view li,
+body.simple-view a,
+body.simple-view span {
+  font-size: 1.35rem !important;
+  color: #111111 !important;
+}
+
+body.simple-view h1 {
+  font-size: 2.6rem !important;
+  color: #000000 !important;
+}
+
+body.simple-view h2 {
+  font-size: 2.1rem !important;
+  color: #0a5c60 !important;
+  border-bottom: 2px solid #0a5c60;
+  padding-bottom: 4px;
+}
+
+body.simple-view h3 {
+  font-size: 1.6rem !important;
+  color: #000000 !important;
+}
+
+/* Force Single Column Layout in Simple View */
+body.simple-view .main-layout-wrapper {
+  display: block !important;
+}
+
+body.simple-view .site-sidebar {
+  border-left: none !important;
+  padding-left: 0 !important;
+  margin-top: 2rem;
+  border-top: 3px solid #0d7377;
+  padding-top: 2rem;
+}
+
+body.simple-view .section-block {
+  background: #ffffff !important;
+  border: 2px solid #0d7377 !important;
+  box-shadow: none !important;
+  margin-bottom: 2rem !important;
+}
+
+body.simple-view .section-item-action,
+body.simple-view .sidebar-link {
+  font-size: 1.3rem !important;
+  background: #0d7377 !important;
+  color: #ffffff !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  margin-top: 10px !important;
+}
+
+body.simple-view .section-item-action:hover,
+body.simple-view .sidebar-link:hover {
+  background: #0a5c60 !important;
+}
