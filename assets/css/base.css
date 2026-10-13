@@ -36,7 +36,7 @@ body {
   padding: 0;
   line-height: 1.5;
   /* Centralized 1.15rem global font standard */
-  font-size: 1.15rem; 
+  font-size: 1.15rem;
 }
 
 img {
@@ -45,7 +45,10 @@ img {
 }
 
 /* ---- Typography ---- */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   color: var(--text-dark);
   margin: 0 0 var(--space-sm);
   line-height: 1.25;
@@ -67,7 +70,8 @@ h4 {
   font-size: 1.1rem;
 }
 
-p, li {
+p,
+li {
   font-size: 1.15rem;
   color: var(--text-body);
   margin: 0 0 var(--space-sm);
@@ -85,4 +89,3 @@ ul {
 li {
   margin-bottom: var(--space-xs);
 }
-
