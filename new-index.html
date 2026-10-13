@@ -13,22 +13,24 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
 		rel="stylesheet" />
-	<link rel="stylesheet" href="assets/css/new-main.css" />
-	<script src="assets/js/new-global.js" defer></script>
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<script src="assets/js/global.js" defer></script>
 </head>
 
 <body>
-	<!-- Accessibility Bar / Simple View Toggle -->
-	<div class="accessibility-bar" style="background: #f4f6f8; padding: 0.6rem 1rem; text-align: right; font-size: 1rem; border-bottom: 1px solid #d0e0e1;">
-		<span style="color: #1a2e35; font-weight: 500;">Reading preference: </span>
-		<button id="simple-view-toggle" class="btn btn-secondary" style="padding: 0.3rem 0.8rem; font-size: 0.95rem; cursor: pointer;">Switch to Simple View</button>
-	</div>
-
-	<header class="site-header">
-		<img src="assets/img/coverphoto.png" alt="Grandview Exchange" />
-	</header>
-
+	
 	<div class="site-shell">
+		<!-- Accessibility Bar / Simple View Toggle -->
+		<div class="accessibility-bar">
+			<span class="accessibility-label">Reading preference:</span>
+			<button id="simple-view-toggle" class="btn btn-secondary">Switch to Simple View</button>
+		</div>
+
+		<!-- Constrained Site Banner Header -->
+		<header class="site-header site-header-banner">
+			<img src="assets/img/coverphoto.png" alt="Grandview Exchange" />
+		</header>
+
 		<section class="page-intro-summary">
 			<h1>Grandview Exchange</h1>
 			<p class="lead-text">
@@ -202,7 +204,7 @@
 					<h3>MyErickson</h3>
 					<p>
 						The official app designed by Erickson for residents to enhance daily living experiences.
-						<span class="footnote-text" style="display: block; margin-top: 0.5rem; font-size: 0.85rem; color: #666;">Note: Grandview Exchange and MyErickson are separate systems.</span>
+						<span class="footnote-text sidebar-footnote">Note: Grandview Exchange and MyErickson are separate systems.</span>
 					</p>
 					<a class="sidebar-link" href="https://myerickson.erickson.com/" target="_blank">Go to MyErickson →</a>
 				</div>
