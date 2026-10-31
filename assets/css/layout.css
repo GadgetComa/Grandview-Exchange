@@ -1,6 +1,6 @@
 /* ============================================================
-   GLOBAL LAYOUT SYSTEM
-   Grid, Shell, Layout wrappers, and Content Cards
+   1. CORE VIEWPORT & LAYOUT CONTAINERS
+   Base resets, structural shell, header image, and grid systems
 ============================================================ */
 
 /* Prevent horizontal overflow scrolling and force layout engine to fit viewport */
@@ -21,24 +21,7 @@ body {
   box-sizing: border-box;
 }
 
-/* ---- Grid Utilities ---- */
-.grid {
-  display: grid;
-  gap: var(--space-lg);
-}
-
-.grid-1col {
-  grid-template-columns: 1fr;
-  gap: 0;
-}
-
-.grid-2col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
-}
-
-/* ---- Structural Shell & Header ---- */
+/* Structural Shell & Header */
 .site-shell {
   max-width: var(--content-width);
   margin: 0 auto;
@@ -59,36 +42,24 @@ body {
   display: block;
 }
 
-/* ---- Mobile Viewport & Width Controls (Screens under 768px) ---- */
-@media (max-width: 768px) {
-  .grid-2col {
-    grid-template-columns: 1fr;
-  }
-
-  /* Make shell and header slightly narrower on phone screens */
-  .site-shell,
-  .site-header,
-  #site-nav {
-    width: 90%;
-    /* Adjust this percentage to make it narrower (e.g., 88%) or wider (e.g., 94%) */
-    max-width: 540px;
-    /* Cap layout width on larger phone screens */
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Keep main layout tracks aligned inside the 90% shell */
-  .main-layout-wrapper {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    width: 100%;
-    margin-top: var(--space-lg);
-  }
+/* Grid Utilities */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
 }
 
-/* ---- Balanced Two-Column Structural Frame (Desktop) ---- */
+.grid-1col {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+/* Desktop Two-Column Layout Frame (Main Content + Sidebar Track) */
 @media (min-width: 769px) {
   .main-layout-wrapper {
     display: grid;
@@ -97,36 +68,29 @@ body {
     margin-top: var(--space-xl);
     align-items: start;
   }
-}
 
-/* Sidebar layout track base configuration rules */
-.site-sidebar {
-  width: 100%;
-}
-
-/* Vertical structural layout divider on desktop viewports */
-@media (min-width: 769px) {
   .site-sidebar {
     border-left: 1px solid var(--border);
     padding-left: var(--space-lg);
   }
 }
 
-@media (max-width: 768px) {
-  .site-sidebar {
-    padding-left: 0;
-  }
+.site-sidebar {
+  width: 100%;
 }
 
-/* ---- Full-Width Page Layout Modifier ---- */
+/* Full-Width Page Layout Modifier */
 .main-layout-wrapper.full-width-layout {
   display: block;
   width: 100%;
 }
 
+
 /* ============================================================
-   GLOBAL NAVIGATION BAR (Breadcrumbs & Action Buttons)
+   2. NAVIGATION BAR & BREADCRUMBS
+   Header navigation row, breadcrumb text, and return buttons
 ============================================================ */
+
 #site-nav {
   max-width: var(--content-width);
   margin: var(--space-lg) auto;
@@ -188,7 +152,19 @@ body {
   color: var(--text-dark) !important;
 }
 
-/* ---- Page Intro Summary Headers ---- */
+
+/* ============================================================
+   3. SECTION CARDS & TYPOGRAPHY RHYTHM
+   Content blocks, section items, list spacing, and action links
+============================================================ */
+
+/* Main Content Area Container */
+.main-content-area {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Page Intro Summary Header */
 .page-intro-summary {
   margin-top: var(--space-sm);
   margin-bottom: var(--space-xl);
@@ -199,23 +175,7 @@ body {
   margin-bottom: var(--space-md);
 }
 
-/* ---- Card Headings ---- */
-.section-block h2,
-.sidebar-heading {
-  font-family: 'Lora', serif;
-  margin: 0 0 var(--space-xs) 0;
-}
-
-/* ============================================================
-   UNIFIED CONTENT & SIDEBAR ITEM SPACING
-============================================================ */
-/* ---- Main Content Area ---- */
-.main-content-area {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Main Section Blocks & Sidebar Container Cards */
+/* Section Blocks & Cards */
 .section-block {
   background: var(--bg-white);
   border-radius: 8px;
@@ -224,14 +184,19 @@ body {
   box-shadow: var(--shadow-card);
 }
 
-/* Section Sub-descriptions */
+.section-block h2,
+.sidebar-heading {
+  font-family: 'Lora', serif;
+  margin: 0 0 var(--space-xs) 0;
+}
+
 .section-desc,
 .sidebar-intro {
   color: var(--text-muted);
   margin-bottom: var(--space-lg);
 }
 
-/* Unified Row Item Layout (Main Area & Sidebar) */
+/* Section & Sidebar Item Rows */
 .section-item-row,
 .sidebar-item {
   display: flex;
@@ -241,7 +206,6 @@ body {
   border-top: 1px solid var(--border);
 }
 
-/* First Item in a Block (No Border / No Top Margin) */
 .section-item-row:first-of-type,
 .sidebar-item:first-of-type {
   border-top: none;
@@ -249,7 +213,6 @@ body {
   margin-top: 0;
 }
 
-/* First Item directly following an intro description text */
 .section-desc+.section-item-row,
 .sidebar-intro+.sidebar-item {
   border-top: 1px solid var(--border);
@@ -257,7 +220,6 @@ body {
   margin-top: var(--space-lg);
 }
 
-/* Typography & Base Margins */
 .section-item-title,
 .sidebar-item h3 {
   font-weight: 600;
@@ -269,18 +231,26 @@ body {
   margin: 0 0 var(--space-xs) 0;
 }
 
-/* Clear internal paragraph margins when inside a wrapper div */
 .section-item-desc p {
   margin: 0;
 }
 
-/* Subheadings inside main section items */
 .section-item-row h4 {
   margin-top: var(--space-md);
   margin-bottom: var(--space-xs);
 }
 
-/* Combined Centered Action & Sidebar Links */
+.section-item-row p strong {
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.section-item-row>*:last-child,
+.sidebar-item>*:last-child {
+  margin-bottom: 0;
+}
+
+/* Combined Action Links */
 .section-item-action,
 .sidebar-link {
   color: var(--teal);
@@ -298,7 +268,7 @@ body {
   text-underline-offset: 7px;
 }
 
-/* List Rhythm & Spacing */
+/* List Formatting */
 .rich-text-area ul,
 .rich-text-area ol {
   margin: 0 0 var(--space-sm) 0;
@@ -310,179 +280,13 @@ body {
   margin-bottom: var(--space-xs);
 }
 
-.section-item-row p strong {
-  display: inline-block;
-  margin-bottom: 0;
-}
-
-/* Prevent bottom margins from leaking out of row containers */
-.section-item-row>*:last-child,
-.sidebar-item>*:last-child {
-  margin-bottom: 0;
-}
 
 /* ============================================================
-   GLOBAL FOOTER SYSTEM
-============================================================ */
-.site-footer {
-  text-align: center;
-  padding: var(--space-xl) 0;
-  border-top: 1px solid var(--border);
-  width: 100%;
-}
-
-.site-footer p {
-  font-size: 1.15rem;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-/* ============================================================
-   MOBILE RESPONSIVE CALENDAR & SIDEBAR FIXES
+   4. RESIDENT RESOURCE GUIDE & DOCUMENT VIEWER STYLES
+   Resource list rows, category landing alignment, and embedded PDFs
 ============================================================ */
 
-/* FullCalendar Header Toolbar Responsiveness */
-@media (max-width: 768px) {
-
-  /* Stack or shrink header elements gracefully */
-  .fc .fc-toolbar {
-    flex-direction: column !important;
-    gap: 8px !important;
-    align-items: center !important;
-  }
-
-  .fc .fc-toolbar-title {
-    font-size: 1.15rem !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  /* Shorten button margins so prev/next don't overlap title */
-  .fc .fc-button {
-    padding: 0.35rem 0.6rem !important;
-    font-size: 0.85rem !important;
-  }
-
-  /* Compact FullCalendar cell padding and column text on mobile */
-  .fc .fc-col-header-cell-cushion,
-  .fc .fc-daygrid-day-number {
-    font-size: 0.8rem;
-    padding: 2px !important;
-  }
-
-  .fc-theme-standard td,
-  .fc-theme-standard th {
-    padding: 0 !important;
-  }
-
-  /* Force horizontal scrolling for table-grid view on tiny screens if needed */
-  .fc .fc-toolbar-chunk {
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  /* FullCalendar Table View Responsiveness */
-  .fc .fc-view-harness {
-    width: 100% !important;
-    overflow-x: auto !important;
-
-  }
-
-  /* Unified Mobile Sidebar Sizing */
-  .site-sidebar.section-block {
-    padding: var(--space-lg);
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* ============================================================
-   CLEAN & POLISHED MOBILE CALENDAR LIST VIEW
-============================================================ */
-  @media (max-width: 768px) {
-
-    /* 1. Reclaim card spacing so content fills the screen gracefully */
-    .section-block {
-      padding: var(--space-md) var(--space-xs) !important;
-    }
-
-    /* 2. Style date headers cleanly */
-    .fc .fc-list-day-cushion {
-      background-color: var(--bg-light, #f4f6f8) !important;
-      padding: 8px 12px !important;
-    }
-
-    .fc .fc-list-day-text,
-    .fc .fc-list-day-side-text {
-      font-family: 'Lora', serif !important;
-      font-weight: 600 !important;
-      color: var(--text-dark) !important;
-      font-size: 1.05rem !important;
-    }
-
-    /* 3. Re-align table cells into a clean 2-column layout */
-    .fc .fc-list-event {
-      display: table-row !important;
-      /* Restore native table row flow */
-      border: none !important;
-    }
-
-    .fc .fc-list-event td {
-      border: none !important;
-      /* Remove unsightly lines under text */
-      padding: 10px 4px !important;
-      vertical-align: top !important;
-      background: transparent !important;
-    }
-
-    /* Compact left column for Time */
-    .fc .fc-list-event-time {
-      width: 28% !important;
-      min-width: 90px !important;
-      font-size: 0.85rem !important;
-      font-weight: 600 !important;
-      color: var(--text-muted) !important;
-      white-space: normal !important;
-      /* Allow 10:00am - 11:00am to stack naturally */
-      line-height: 1.3 !important;
-    }
-
-    /* Color dot cell - tuck neatly next to title */
-    .fc .fc-list-event-graphic {
-      width: 16px !important;
-      padding-right: 0 !important;
-      padding-left: 2px !important;
-    }
-
-    .fc .fc-list-event-dot {
-      border-width: 5px !important;
-      margin-top: 4px !important;
-    }
-
-    /* Title column - clean readable typography */
-    .fc .fc-list-event-title {
-      font-size: 1rem !important;
-      line-height: 1.35 !important;
-      padding-left: 6px !important;
-    }
-
-    .fc .fc-list-event-title a {
-      color: var(--text-dark) !important;
-      text-decoration: none !important;
-      font-weight: 500 !important;
-    }
-
-    /* Elegant thin separator between items */
-    .fc .fc-list-event+.fc-list-event td {
-      border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
-    }
-  }
-}
-
-/* ============================================================
-   RESOURCE GUIDE & DOCUMENT VIEWER STYLES
-============================================================ */
-
-/* Resource List Layout */
+/* Resource List Rows (Welcome Home, Mail, Parking, etc.) */
 .resource-list-item {
   display: flex;
   justify-content: space-between;
@@ -538,7 +342,33 @@ body {
   margin-left: var(--space-xs);
 }
 
-/* Embedded PDF Viewer Layout */
+/* Landing Page Category Row & Button Horizontal Alignment */
+.rich-text-area .section-item-row.category-row,
+.banner-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: var(--space-md) !important;
+}
+
+.category-info {
+  flex: 1 1 auto !important;
+}
+
+.category-action {
+  flex-shrink: 0 !important;
+  margin-top: 0 !important;
+}
+
+.category-action .btn {
+  padding: 0.4rem 1rem !important;
+  font-size: 1rem !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+
+/* Embedded PDF Viewer Frame & Download Bar */
 .pdf-container {
   width: 100%;
   height: 75vh;
@@ -577,34 +407,173 @@ body {
   text-align: center;
 }
 
-/* Landing Page Compact Grid Layout */
-.rich-text-area .section-item-row.category-row,
-.banner-row {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  gap: var(--space-md) !important;
+
+/* ============================================================
+   5. GLOBAL FOOTER SYSTEM
+   Footer container and copyright/support text
+============================================================ */
+
+.site-footer {
+  text-align: center;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid var(--border);
+  width: 100%;
 }
 
-.category-info {
-  flex: 1 1 auto !important;
+.site-footer p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin: 0;
 }
 
-.category-action {
-  flex-shrink: 0 !important;
-  margin-top: 0 !important;
-}
 
-.category-action .btn {
-  padding: 0.4rem 1rem !important;
-  font-size: 1rem !important;
-  white-space: nowrap !important;
-  display: inline-block !important;
-}
+/* ============================================================
+   6. RESPONSIVE MEDIA QUERIES & MOBILE OVERRIDES
+   Screen adjustments for devices under 768px and 600px
+============================================================ */
 
-/* Responsive Media Queries */
+/* General Mobile Breakpoint (under 768px) */
 @media (max-width: 768px) {
+  .grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Phone Viewport Shell Width Sizing */
+  .site-shell,
+  .site-header,
+  #site-nav {
+    width: 90%;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main-layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    width: 100%;
+    margin-top: var(--space-lg);
+  }
+
+  .site-sidebar {
+    padding-left: 0;
+  }
+
+  .site-sidebar.section-block {
+    padding: var(--space-lg);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* FullCalendar Responsiveness */
+  .fc .fc-toolbar {
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.15rem !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .fc .fc-button {
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.85rem !important;
+  }
+
+  .fc .fc-col-header-cell-cushion,
+  .fc .fc-daygrid-day-number {
+    font-size: 0.8rem;
+    padding: 2px !important;
+  }
+
+  .fc-theme-standard td,
+  .fc-theme-standard th {
+    padding: 0 !important;
+  }
+
+  .fc .fc-toolbar-chunk {
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .fc .fc-view-harness {
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  /* Mobile Calendar List View Adjustments */
+  .section-block {
+    padding: var(--space-md) var(--space-xs) !important;
+  }
+
+  .fc .fc-list-day-cushion {
+    background-color: var(--bg-light, #f4f6f8) !important;
+    padding: 8px 12px !important;
+  }
+
+  .fc .fc-list-day-text,
+  .fc .fc-list-day-side-text {
+    font-family: 'Lora', serif !important;
+    font-weight: 600 !important;
+    color: var(--text-dark) !important;
+    font-size: 1.05rem !important;
+  }
+
+  .fc .fc-list-event {
+    display: table-row !important;
+    border: none !important;
+  }
+
+  .fc .fc-list-event td {
+    border: none !important;
+    padding: 10px 4px !important;
+    vertical-align: top !important;
+    background: transparent !important;
+  }
+
+  .fc .fc-list-event-time {
+    width: 28% !important;
+    min-width: 90px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    white-space: normal !important;
+    line-height: 1.3 !important;
+  }
+
+  .fc .fc-list-event-graphic {
+    width: 16px !important;
+    padding-right: 0 !important;
+    padding-left: 2px !important;
+  }
+
+  .fc .fc-list-event-dot {
+    border-width: 5px !important;
+    margin-top: 4px !important;
+  }
+
+  .fc .fc-list-event-title {
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+    padding-left: 6px !important;
+  }
+
+  .fc .fc-list-event-title a {
+    color: var(--text-dark) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+  }
+
+  .fc .fc-list-event+.fc-list-event td {
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+  }
+
+  /* PDF Embedded Container Sizing */
   .pdf-container {
     height: 65vh;
     min-height: 400px;
@@ -617,6 +586,7 @@ body {
   }
 }
 
+/* Compact Mobile Breakpoint (under 600px) */
 @media (max-width: 600px) {
 
   .resource-list-item,
