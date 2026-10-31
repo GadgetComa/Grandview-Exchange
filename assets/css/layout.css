@@ -407,6 +407,63 @@ body {
   text-align: center;
 }
 
+/* Resource Sub-Page Row Layout (Separated Cards/Rows with Right-Aligned Buttons) */
+.resource-row {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: var(--space-md) !important;
+  padding-top: var(--space-lg);
+  margin-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+}
+
+.resource-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.resource-info {
+  flex: 1 1 auto !important;
+}
+
+.resource-info h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.resource-info p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.resource-action-col {
+  flex-shrink: 0 !important;
+  margin-top: 0 !important;
+}
+
+.resource-action-col .btn {
+  padding: 0.4rem 1rem !important;
+  font-size: 1rem !important;
+  white-space: nowrap !important;
+  display: inline-block !important;
+}
+
+/* Mobile Responsive Stack for Resource Rows */
+@media (max-width: 600px) {
+  .resource-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .resource-action-col {
+    margin-top: var(--space-xs) !important;
+  }
+}
 
 /* ============================================================
    5. GLOBAL FOOTER SYSTEM
