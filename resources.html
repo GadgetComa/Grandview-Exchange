@@ -15,6 +15,46 @@
 	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script src="assets/js/global.js" defer></script>
+
+	<style>
+		/* Compact Row Layout with Right-Aligned Action Buttons */
+		.rich-text-area .section-item-row.category-row,
+		.banner-row {
+			display: flex !important;
+			flex-direction: row !important;
+			justify-content: space-between !important;
+			align-items: center !important;
+			gap: var(--space-md) !important;
+		}
+
+		.category-info {
+			flex: 1 1 auto !important;
+		}
+
+		.category-action {
+			flex-shrink: 0 !important;
+			margin-top: 0 !important;
+		}
+
+		.category-action .btn {
+			padding: 0.4rem 1rem !important;
+			font-size: 1rem !important;
+			white-space: nowrap !important;
+			display: inline-block !important;
+		}
+
+		/* Mobile adjustment to stack cleanly when screen is narrow */
+		@media (max-width: 600px) {
+			.rich-text-area .section-item-row.category-row,
+			.banner-row {
+				flex-direction: column !important;
+				align-items: flex-start !important;
+			}
+			.category-action {
+				margin-top: var(--space-xs) !important;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -38,12 +78,16 @@
 		</section>
 
 		<!-- Accessibility Shortcut Banner -->
-		<aside class="section-block" style="background-color: var(--teal-light); border: 1px solid var(--teal); margin-bottom: var(--space-lg); padding: var(--space-md) var(--space-lg);">
-			<h2 style="font-size: 1.25rem; color: var(--teal-dark); margin-bottom: var(--space-xs);">Prefer a Simpler View?</h2>
-			<p style="margin-bottom: var(--space-xs);">
-				If you prefer a single page without menus or extra links, try our simplified quick reference guide.
-			</p>
-			<a class="section-item-action" href="resources-digest.html" style="align-self: flex-start; margin-top: 0; font-size: 1rem;">Open Single-Page Quick Reference →</a>
+		<aside class="section-block banner-row" style="background-color: var(--teal-light); border: 1px solid var(--teal); margin-bottom: var(--space-lg); padding: var(--space-md) var(--space-lg);">
+			<div class="category-info">
+				<h2 style="font-size: 1.25rem; color: var(--teal-dark); margin-bottom: var(--space-xs);">Prefer a Simpler View?</h2>
+				<p style="margin-bottom: 0;">
+					Scroll through everything on one continuous page without extra clicks.
+				</p>
+			</div>
+			<div class="category-action">
+				<a class="btn btn-secondary" href="resources-digest.html">Quick Reference →</a>
+			</div>
 		</aside>
 
 		<!-- Main Content Track: Single Unified Card -->
@@ -51,89 +95,126 @@
 			<article class="section-block">
 				
 				<!-- STAGE 1: ARRIVING & SETTING UP -->
-				<div class="section-item-row">
-					<h3 class="section-item-title">Welcome Home Resources</h3>
-					<p class="section-item-desc">
-						Resident handbook, forms (guest registration, pets, away frome home, etc.), storage units, and prviacy notice
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Welcome Home Resources</h3>
+						<p class="section-item-desc">Resident handbook, forms (guest registration, pets, away from home, etc.), and storage units</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Mail, Packages & Addresses</h3>
-					<p class="section-item-desc">
-						Apartment addresses, mailboxes, and package deliveries
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Mail, Packages & Addresses</h3>
+						<p class="section-item-desc">Apartment addresses, mailboxes, and package deliveries</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Parking, Transportation, Visitors & Guest Access</h3>
-					<p class="section-item-desc">
-						Resident and visitor parking, EV charging, shuttle schedules, visitor access, and driving directions
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Parking, Transportation, Visitors & Guest Access</h3>
+						<p class="section-item-desc">Resident and visitor parking, EV charging, shuttle schedules, visitor access, and driving directions</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Internet, Telephone & Cable TV</h3>
-					<p class="section-item-desc">
-						WiFi instructions, phone line features, cable TV installation and channel guide
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Internet, Telephone & Cable TV</h3>
+						<p class="section-item-desc">WiFi instructions, phone line features, cable TV installation and channel guide</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
 				<!-- STAGE 2: DAILY CAMPUS LIFE & AMENITIES -->
-				<div class="section-item-row">
-					<h3 class="section-item-title">About The Grandview Bethesda</h3>
-					<p class="section-item-desc">
-					Property maps, building floor plans, construction updates, furture development plans
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">About The Grandview Bethesda</h3>
+						<p class="section-item-desc">Property maps, building floor plans, construction updates, future development plans</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">On-Site Dining Services</h3>
-					<p class="section-item-desc">
-						Operating hours, weekly menus, online reservations, and nutrition information.
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">On-Site Dining Services</h3>
+						<p class="section-item-desc">Operating hours, weekly menus, online reservations, and nutrition information.</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Health & Fitness</h3>
-					<p class="section-item-desc">
-						Medical center, fitness center, and active wellness schedules
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Health & Fitness</h3>
+						<p class="section-item-desc">Medical center, fitness center, and active wellness schedules</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">General Services & Facilities</h3>
-					<p class="section-item-desc">
-						Maintenance, housekeeping, safety, and community access assistance</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">General Services & Facilities</h3>
+						<p class="section-item-desc">Maintenance, housekeeping, safety, and community access assistance</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
 				<!-- STAGE 3: CONNECTING & GETTING INVOLVED -->
-				<div class="section-item-row">
-					<h3 class="section-item-title">Community Connections, Communications & News</h3>
-					<p class="section-item-desc">
-						Grandview Exchange message boards, community calendar, list of clubs, MyErickson app, Resident Advisory Council
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Community Connections, Communications & News</h3>
+						<p class="section-item-desc">Grandview Exchange message boards, community calendar, list of clubs, MyErickson app, Resident Advisory Council</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Helping Hands</h3>
-					<p class="section-item-desc">
-						Resident volunteer network dedicated to providing neighborly assistance across the community.
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Helping Hands</h3>
+						<p class="section-item-desc">Resident volunteer network dedicated to providing neighborly assistance across the community.</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Local Amenities & Resident Recommendations</h3>
-					<p class="section-item-desc">
-						Nearby shopping centers, pharmacies, medical clinics, donation sites, and resident recommendations
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Local Amenities & Resident Recommendations</h3>
+						<p class="section-item-desc">Nearby shopping centers, pharmacies, medical clinics, donation sites, and resident recommendations</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
-				<div class="section-item-row">
-					<h3 class="section-item-title">Contacts</h3>
-					<p class="section-item-desc">
-						Direct Grandview departments, and resident directory
-					</p>
+				<div class="section-item-row category-row">
+					<div class="category-info">
+						<h3 class="section-item-title">Contacts</h3>
+						<p class="section-item-desc">Direct Grandview departments, and resident directory</p>
+					</div>
+					<div class="category-action">
+						<a href="coming-soon.html" class="btn">View Details →</a>
+					</div>
 				</div>
 
 			</article>
