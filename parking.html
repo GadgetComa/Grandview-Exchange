@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Parking, Transportation & Guests – Grandview Exchange</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+	<link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+	<link rel="shortcut icon" href="assets/img/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+	<link rel="manifest" href="assets/img/site.webmanifest" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="assets/js/global.js" defer></script>
+
+	<style>
+		.resource-list-item { display: flex; justify-content: space-between; align-items: flex-start; padding: var(--space-md) 0; border-bottom: 1px solid var(--border); gap: var(--space-md); }
+		.resource-list-item:last-child { border-bottom: none; padding-bottom: 0; }
+		.resource-list-item:first-child { padding-top: 0; }
+		.resource-info h3 { font-size: 1.15rem; font-weight: 600; margin: 0 0 var(--space-xs) 0; }
+		.resource-info p { font-size: 1rem; color: var(--text-muted); margin: 0; }
+		.resource-action { white-space: nowrap; font-size: 1rem; font-weight: 600; color: var(--teal); text-decoration: underline; text-underline-offset: 4px; }
+		.resource-action:hover { color: var(--teal-dark); }
+		.resource-tag { display: inline-block; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; padding: 2px 6px; border-radius: 4px; background-color: var(--teal-light); color: var(--teal-dark); margin-left: var(--space-xs); }
+		@media (max-width: 600px) { .resource-list-item { flex-direction: column; gap: var(--space-xs); } .resource-action { align-self: flex-start; margin-top: var(--space-xs); } }
+	</style>
+</head>
+
+<body>
+	<header class="site-header">
+		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
+	</header>
+	<div class="site-shell">
+		<div id="site-nav"></div>
+		<section class="page-intro-summary">
+			<h1>Parking, Transportation, Visitors & Guest Access</h1>
+			<p class="lead-text">
+				Guidelines for garage parking, EV charging, campus shuttle schedules, visitor navigation, and guest sign-in procedures.
+			</p>
+		</section>
+		<main class="main-content-area rich-text-area">
+			<article class="section-block">
+				<div class="resource-list-item">
+					<div class="resource-info">
+						<h3>Garage Parking & EV Charging Stations <span class="resource-tag">Guidelines</span>[span_8](start_span)[span_8](end_span)</h3>
+						<p>Assigned parking spaces on levels 2 and 3, gate badge-out hours, windshield permits, and EV station idle fee rules[span_9](start_span)[span_9](end_span).</p>
+					</div>
+					<a class="resource-action" href="view-pdf.html?title=Garage%20and%20Parking%20Rules&file=assets/docs/Parking.pdf">View Guidelines →</a>
+				</div>
+				<div class="resource-list-item">
+					<div class="resource-info">
+						<h3>Campus Shuttle Services <span class="resource-tag">Schedule</span></h3>
+						<p>Shuttle routes, departure schedules, pickup points, and shopping or medical appointment transport.</p>
+					</div>
+					<a class="resource-action" href="view-pdf.html?title=Campus%20Shuttle%20Services&file=assets/docs/PLACEHOLDER.pdf">View Schedule →</a>
+				</div>
+				<div class="resource-list-item">
+					<div class="resource-info">
+						<h3>Visitor Navigation & GPS Routing Workarounds <span class="resource-tag">Guide</span></h3>
+						<p>Directions and campus gate entry instructions to help visitors and mapping services find the correct entrance.</p>
+					</div>
+					<a class="resource-action" href="view-pdf.html?title=Visitor%20Navigation%20Guide&file=assets/docs/PLACEHOLDER.pdf">View Guide →</a>
+				</div>
+				<div class="resource-list-item">
+					<div class="resource-info">
+						<h3>Guest Sign-In & Frequent Visitor Badges <span class="resource-tag">Protocol</span></h3>
+						<p>Front desk guest check-in protocols and sponsorship instructions for recurring visitor access cards.</p>
+					</div>
+					<a class="resource-action" href="view-pdf.html?title=Guest%20Sign-In%20and%20Badges&file=assets/docs/PLACEHOLDER.pdf">View Protocol →</a>
+				</div>
+			</article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<p>© 2026 Grandview Exchange · Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a></p>
+	</footer>
+</body>
+</html>
