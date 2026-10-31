@@ -2,233 +2,190 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Resident Resource Guide – Grandview Exchange</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta charset="UTF-8">
+    <title>Resident Resource Guide – Grandview Exchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-	<link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
-	<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
-	<link rel="shortcut icon" href="assets/img/favicon.ico" />
-	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
-	<link rel="manifest" href="assets/img/site.webmanifest" />
+    <link rel="icon" type="image/png" href="assets/img/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="shortcut icon" href="assets/img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
+    <link rel="manifest" href="assets/img/site.webmanifest" />
 
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="assets/js/global.js" defer></script>
-
-	<style>
-		/* Compact Row Layout with Right-Aligned Action Buttons */
-		.rich-text-area .section-item-row.category-row,
-		.banner-row {
-			display: flex !important;
-			flex-direction: row !important;
-			justify-content: space-between !important;
-			align-items: center !important;
-			gap: var(--space-md) !important;
-		}
-
-		.category-info {
-			flex: 1 1 auto !important;
-		}
-
-		.category-action {
-			flex-shrink: 0 !important;
-			margin-top: 0 !important;
-		}
-
-		.category-action .btn {
-			padding: 0.4rem 1rem !important;
-			font-size: 1rem !important;
-			white-space: nowrap !important;
-			display: inline-block !important;
-		}
-
-		/* Mobile adjustment to stack cleanly when screen is narrow */
-		@media (max-width: 600px) {
-			.rich-text-area .section-item-row.category-row,
-			.banner-row {
-				flex-direction: column !important;
-				align-items: flex-start !important;
-			}
-			.category-action {
-				margin-top: var(--space-xs) !important;
-			}
-		}
-	</style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/global.js" defer></script>
 </head>
 
 <body>
+    <header class="site-header">
+        <img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
+    </header>
+    <div class="site-shell">
+        <div id="site-nav"></div>
+        <section class="page-intro-summary">
+            <h1>Grandview Exchange Resident Resource Guide</h1>
+            <p class="lead-text">
+                Welcome to the Grandview Exchange Resident Resource Guide—your central directory for community
+                amenities, building guidelines, daily services, and local recommendations.
+            </p>
+        </section>
 
-	<!-- Site Banner -->
-	<header class="site-header">
-		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
-	</header>
+        <aside class="section-block banner-row"
+            style="background-color: var(--teal-light); border: 1px solid var(--teal); margin-bottom: var(--space-lg); padding: var(--space-md) var(--space-lg);">
+            <div class="category-info">
+                <h2 style="font-size: 1.25rem; color: var(--teal-dark); margin-bottom: var(--space-xs);">Prefer a
+                    Simpler View?</h2>
+                <p style="margin-bottom: 0;">
+                    Scroll through everything on one continuous page without extra clicks.
+                </p>
+            </div>
+            <div class="category-action">
+                <a class="btn btn-secondary" href="resources-digest.html">Quick Reference →</a>
+            </div>
+        </aside>
 
-	<div class="site-shell">
+        <main class="main-content-area rich-text-area">
+            <article class="section-block">
 
-		<!-- GLOBAL NAV INCLUDE -->
-		<div id="site-nav"></div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Welcome Home Resources</h3>
+                        <p class="section-item-desc">Resident handbook, forms (guest registration, pets, away from home,
+                            etc.), and storage units</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="welcome-home.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-		<!-- Page Title Block -->
-		<section class="page-intro-summary">
-			<h1>Grandview Exchange Resident Resource Guide</h1>
-			<p class="lead-text">
-				Welcome to the Grandview Exchange Resident Resource Guide--your central directory for community amenities, building guidelines, daily services, and local recommendations.
-			</p>
-		</section>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Mail, Packages & Addresses</h3>
+                        <p class="section-item-desc">Apartment addresses, mailboxes, and package deliveries</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="mail.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-		<!-- Accessibility Shortcut Banner -->
-		<aside class="section-block banner-row" style="background-color: var(--teal-light); border: 1px solid var(--teal); margin-bottom: var(--space-lg); padding: var(--space-md) var(--space-lg);">
-			<div class="category-info">
-				<h2 style="font-size: 1.25rem; color: var(--teal-dark); margin-bottom: var(--space-xs);">Prefer a Simpler View?</h2>
-				<p style="margin-bottom: 0;">
-					Scroll through everything on one continuous page without extra clicks.
-				</p>
-			</div>
-			<div class="category-action">
-				<a class="btn btn-secondary" href="resources-digest.html">Quick Reference →</a>
-			</div>
-		</aside>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Parking, Transportation, Visitors & Guest Access</h3>
+                        <p class="section-item-desc">Resident and visitor parking, EV charging, shuttle schedules,
+                            visitor access, and driving directions</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="parking.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-		<!-- Main Content Track: Single Unified Card -->
-		<main class="main-content-area rich-text-area">
-			<article class="section-block">
-				
-				<!-- STAGE 1: ARRIVING & SETTING UP -->
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Welcome Home Resources</h3>
-						<p class="section-item-desc">Resident handbook, forms (guest registration, pets, away from home, etc.), and storage units</p>
-					</div>
-					<div class="category-action">
-						<a href="welcome-home.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Internet, Telephone & Cable TV</h3>
+                        <p class="section-item-desc">WiFi instructions, phone line features, cable TV installation and
+                            channel guide</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="tech.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Mail, Packages & Addresses</h3>
-						<p class="section-item-desc">Apartment addresses, mailboxes, and package deliveries</p>
-					</div>
-					<div class="category-action">
-						<a href="mail.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">About The Grandview Bethesda</h3>
+                        <p class="section-item-desc">Property maps, building floor plans, construction updates, future
+                            development plans</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="about.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Parking, Transportation, Visitors & Guest Access</h3>
-						<p class="section-item-desc">Resident and visitor parking, EV charging, shuttle schedules, visitor access, and driving directions</p>
-					</div>
-					<div class="category-action">
-						<a href="parking.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">On-Site Dining Services</h3>
+                        <p class="section-item-desc">Operating hours, weekly menus, online reservations, and nutrition
+                            information.[span_0](start_span)[span_0](end_span)[span_1](start_span)[span_1](end_span)</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="dining.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Internet, Telephone & Cable TV</h3>
-						<p class="section-item-desc">WiFi instructions, phone line features, cable TV installation and channel guide</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Health & Fitness</h3>
+                        <p class="section-item-desc">Medical center, fitness center, and active wellness schedules</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="coming-soon.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<!-- STAGE 2: DAILY CAMPUS LIFE & AMENITIES -->
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">About The Grandview Bethesda</h3>
-						<p class="section-item-desc">Property maps, building floor plans, construction updates, future development plans</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">General Services & Facilities</h3>
+                        <p class="section-item-desc">Maintenance, housekeeping, safety, and community access
+                            assistance[span_2](start_span)[span_2](end_span)[span_3](start_span)[span_3](end_span)</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="services.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">On-Site Dining Services</h3>
-						<p class="section-item-desc">Operating hours, weekly menus, online reservations, and nutrition information.</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Community Connections, Communications & News</h3>
+                        <p class="section-item-desc">Grandview Exchange message boards, community calendar, list of
+                            clubs, MyErickson app, Resident Advisory
+                            Council[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span)</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="coming-soon.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Health & Fitness</h3>
-						<p class="section-item-desc">Medical center, fitness center, and active wellness schedules</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Helping Hands</h3>
+                        <p class="section-item-desc">Resident volunteer network dedicated to providing neighborly
+                            assistance across the community.</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="coming-soon.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">General Services & Facilities</h3>
-						<p class="section-item-desc">Maintenance, housekeeping, safety, and community access assistance</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Local Amenities & Resident Recommendations</h3>
+                        <p class="section-item-desc">Nearby shopping centers, pharmacies, medical clinics, donation
+                            sites, and resident recommendations</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="donations.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<!-- STAGE 3: CONNECTING & GETTING INVOLVED -->
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Community Connections, Communications & News</h3>
-						<p class="section-item-desc">Grandview Exchange message boards, community calendar, list of clubs, MyErickson app, Resident Advisory Council</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
+                <div class="section-item-row category-row">
+                    <div class="category-info">
+                        <h3 class="section-item-title">Contacts</h3>
+                        <p class="section-item-desc">Direct Grandview departments, and resident directory</p>
+                    </div>
+                    <div class="category-action">
+                        <a href="coming-soon.html" class="btn">View Details →</a>
+                    </div>
+                </div>
 
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Helping Hands</h3>
-						<p class="section-item-desc">Resident volunteer network dedicated to providing neighborly assistance across the community.</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
-
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Local Amenities & Resident Recommendations</h3>
-						<p class="section-item-desc">Nearby shopping centers, pharmacies, medical clinics, donation sites, and resident recommendations</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
-
-				<div class="section-item-row category-row">
-					<div class="category-info">
-						<h3 class="section-item-title">Contacts</h3>
-						<p class="section-item-desc">Direct Grandview departments, and resident directory</p>
-					</div>
-					<div class="category-action">
-						<a href="coming-soon.html" class="btn">View Details →</a>
-					</div>
-				</div>
-
-			</article>
-		</main>
-
-	</div><!-- end site-shell -->
-
-	<footer class="site-footer">
-		<p>
-			© 2026 Grandview Exchange ·
-			Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a>
-		</p>
-	</footer>
-
+            </article>
+        </main>
+    </div>
+    <footer class="site-footer">
+        <p>© 2026 Grandview Exchange · Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a></p>
+    </footer>
 </body>
 
 </html>

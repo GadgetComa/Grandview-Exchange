@@ -12,172 +12,116 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
 	<link rel="manifest" href="assets/img/site.webmanifest" />
 
-	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Source+Sans+3:wght@400;500;600&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/main.css">
 	<script src="assets/js/global.js" defer></script>
-
-	<style>
-		/* Custom compact resource row layout */
-		.resource-list-item {
-			display: flex;
-			justify-content: space-between;
-			align-items: flex-start;
-			padding: var(--space-md) 0;
-			border-bottom: 1px solid var(--border);
-			gap: var(--space-md);
-		}
-
-		.resource-list-item:last-child {
-			border-bottom: none;
-			padding-bottom: 0;
-		}
-
-		.resource-list-item:first-child {
-			padding-top: 0;
-		}
-
-		.resource-info h3 {
-			font-size: 1.15rem;
-			font-weight: 600;
-			margin: 0 0 var(--space-xs) 0;
-		}
-
-		.resource-info p {
-			font-size: 1rem;
-			color: var(--text-muted);
-			margin: 0;
-		}
-
-		.resource-action {
-			white-space: nowrap;
-			font-size: 1rem;
-			font-weight: 600;
-			color: var(--teal);
-			text-decoration: underline;
-			text-underline-offset: 4px;
-		}
-
-		.resource-action:hover {
-			color: var(--teal-dark);
-		}
-
-		.resource-tag {
-			display: inline-block;
-			font-size: 0.8rem;
-			font-weight: 600;
-			text-transform: uppercase;
-			padding: 2px 6px;
-			border-radius: 4px;
-			background-color: var(--teal-light);
-			color: var(--teal-dark);
-			margin-left: var(--space-xs);
-		}
-
-		@media (max-width: 600px) {
-			.resource-list-item {
-				flex-direction: column;
-				gap: var(--space-xs);
-			}
-			.resource-action {
-				align-self: flex-start;
-				margin-top: var(--space-xs);
-			}
-		}
-	</style>
 </head>
 
 <body>
-
-	<!-- Site Banner -->
 	<header class="site-header">
 		<img src="assets/img/coverphoto.png" alt="Grandview Exchange Banner">
 	</header>
-
 	<div class="site-shell">
-
-		<!-- GLOBAL NAV INCLUDE -->
 		<div id="site-nav"></div>
-
-		<!-- Page Title Block -->
 		<section class="page-intro-summary">
 			<h1>Welcome Home Resources</h1>
 			<p class="lead-text">
-				Essential forms, authorization disclosures, setup guides, and resident handbooks for settling into your new home at The Grandview.
+				Essential forms, authorization disclosures, setup guides, and resident handbooks for settling into your
+				new home at The Grandview.
 			</p>
 		</section>
-
-		<!-- Main Content Track: Single Unified Card -->
 		<main class="main-content-area rich-text-area">
 			<article class="section-block">
-
-				<!-- Forms & Authorizations Subheading -->
-				<h2 style="font-size: 1.4rem; color: var(--teal-dark); margin-bottom: var(--space-md);">Forms & Authorizations</h2>
+				<h2>Forms & Authorizations</h2>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Authorization for Entry to Living Unit <span class="resource-tag">Form</span></h3>
-						<p>Grant permission for staff or designated service providers to enter your apartment when you are unavailable.</p>
+						<p>Grant permission for staff or designated service providers to enter your apartment when you
+							are unavailable.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Authorization%20for%20Entry&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Authorization%20for%20Entry&file=assets/docs/PLACEHOLDER.pdf">Open
+						Form →</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Permission To Enter Residence <span class="resource-tag">Form</span></h3>
-						<p>Specific or recurring authorization form for external guests, contractors, or personal care aides.</p>
+						<p>Specific or recurring authorization form for external guests, contractors, or personal care
+							aides.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Permission%20To%20Enter&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Permission%20To%20Enter&file=assets/docs/PLACEHOLDER.pdf">Open Form
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Pet Registration & Guidelines <span class="resource-tag">Form</span></h3>
-						<p>Register resident pets with management and review community pet rules and safety guidelines.</p>
+						<p>Register resident pets with management and review community pet rules and safety guidelines.
+						</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Pet%20Registration&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Pet%20Registration&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Emergency Call Pendant Registration <span class="resource-tag">Form</span></h3>
-						<p>Register and activate your personal emergency response pendant with security and health services.</p>
+						<p>Register and activate your personal emergency response pendant with security and health
+							services.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Pendant%20Registration&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Pendant%20Registration&file=assets/docs/PLACEHOLDER.pdf">Open Form
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Media Consent Authorization <span class="resource-tag">Form</span></h3>
-						<p>Grant or opt out of media release consent for community photos, newsletters, and publications.</p>
+						<p>Grant or opt out of media release consent for community photos, newsletters, and
+							publications.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Media%20Consent&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Media%20Consent&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Erickson Advantage Permission to Contact <span class="resource-tag">Form</span></h3>
-						<p>Authorization form to receive information regarding health plan options and health services.</p>
+						<p>Authorization form to receive information regarding health plan options and health services.
+						</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Erickson%20Advantage%20Consent&file=assets/docs/PLACEHOLDER.pdf">Open Form →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Erickson%20Advantage%20Consent&file=assets/docs/PLACEHOLDER.pdf">Open
+						Form →</a>
 				</div>
 
-				<!-- Guides, Billing & Handbooks Subheading -->
-				<h2 style="font-size: 1.4rem; color: var(--teal-dark); margin-top: var(--space-xl); margin-bottom: var(--space-md);">Guides, Billing & Handbooks</h2>
+				<h2>Guides, Billing & Handbooks</h2>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Resident Handbook <span class="resource-tag">Guide</span></h3>
-						<p>Comprehensive guide to community policies, resident rights, amenities, and campus standards.</p>
+						<p>Comprehensive guide to community policies, resident rights, amenities, and campus standards.
+						</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Resident%20Handbook&file=assets/docs/handbook.pdf">View Handbook →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Resident%20Handbook&file=assets/docs/PLACEHOLDER.pdf">View Handbook
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>New MyErickson User Setup <span class="resource-tag">Guide</span></h3>
-						<p>Step-by-step instructions for downloading, registering, and navigating the MyErickson app.</p>
+						<p>Step-by-step instructions for downloading, registering, and navigating the MyErickson app.
+						</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=New%20MyErickson%20User&file=assets/docs/PLACEHOLDER.pdf">View Guide →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=New%20MyErickson%20User&file=assets/docs/PLACEHOLDER.pdf">View Guide
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
@@ -185,41 +129,71 @@
 						<h3>Online Bill-Pay Enrollment <span class="resource-tag">Billing</span></h3>
 						<p>Instructions for setting up automatic monthly statement payments via the resident portal.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Online%20Bill-Pay%20Enrollment&file=assets/docs/PLACEHOLDER.pdf">View Guide →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Online%20Bill-Pay%20Enrollment&file=assets/docs/PLACEHOLDER.pdf">View
+						Guide →</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Dining Quick Guide & Meal Plan Rules <span class="resource-tag">Guide</span></h3>
-						<p>Summary of meal plan structures, carryout policies, dining room dress codes, and venue hours.</p>
+						<p>Summary of meal plan structures, carryout policies, dining room dress codes, and venue hours.
+						</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Dining%20Quick%20Guide&file=assets/docs/PLACEHOLDER.pdf">View Guide →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Dining%20Quick%20Guide&file=assets/docs/PLACEHOLDER.pdf">View Guide
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Comcast Cable TV Services <span class="resource-tag">Tech</span></h3>
-						<p>Channel guide, cable box setup instructions, and support contacts for apartment TV services.</p>
+						<p>Channel guide, cable box setup instructions, and support contacts for apartment TV services.
+						</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Comcast%20TV%20Services&file=assets/docs/PLACEHOLDER.pdf">View Guide →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Comcast%20TV%20Services&file=assets/docs/PLACEHOLDER.pdf">View Guide
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>The Grandview Notice of Privacy Practices <span class="resource-tag">Notice</span></h3>
-						<p>Official notice outlining health information privacy, data protection, and resident confidentiality rights.</p>
+						<p>Official notice outlining health information privacy, data protection, and resident
+							confidentiality rights.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Privacy%20Practices&file=assets/docs/PLACEHOLDER.pdf">View Notice →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Privacy%20Practices&file=assets/docs/PLACEHOLDER.pdf">View Notice
+						→</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
 						<h3>Family and Friends 2026 Program <span class="resource-tag">Perks</span></h3>
-						<p>Details and referral program forms for inviting friends and family to join The Grandview community.</p>
+						<p>Details and referral program forms for inviting friends and family to join The Grandview
+							community.</p>
 					</div>
-					<a class="resource-action" href="view-pdf.html?title=Family%20and%20Friends%202026&file=assets/docs/PLACEHOLDER.pdf">View Details →</a>
+					<a class="resource-action"
+						href="view-pdf.html?title=Family%20and%20Friends%202026&file=assets/docs/PLACEHOLDER.pdf">View
+						Details →</a>
 				</div>
 
 				<div class="resource-list-item">
 					<div class="resource-info">
-						<h3>Embassy Suites Resident Discount <span class="resource
+						<h3>Embassy Suites Resident Discount <span class="resource-tag">Perks</span></h3>
+						<p>Special rate code and booking details for visiting guests at the nearby Embassy Suites hotel.
+						</p>
+					</div>
+					<a class="resource-action"
+						href="view-pdf.html?title=Embassy%20Suites%20Discount&file=assets/docs/PLACEHOLDER.pdf">View
+						Rates →</a>
+				</div>
+			</article>
+		</main>
+	</div>
+	<footer class="site-footer">
+		<p>© 2026 Grandview Exchange · Questions? <a href="mailto:admin@grandviewexchange.com">Contact Us</a></p>
+	</footer>
+</body>
+
+</html>
