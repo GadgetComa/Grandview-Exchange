@@ -123,6 +123,7 @@
 
             // Target your deployed Cloudflare Worker endpoint
             const PROXY_URL = 'https://calendar-cors-proxy.leon-e4e.workers.dev/?url=';
+            const CALENDARS_URL = 'https://calendar-cors-proxy.leon-e4e.workers.dev/calendars.json';
 
             /* ------------------------------
                DYNAMIC COLOR GENERATOR
@@ -137,7 +138,7 @@
             --------------------------------*/
             let calendarConfigs = [];
             try {
-                const res = await fetch('calendars.json');
+                const res = await fetch(CALENDARS_URL);
                 if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to fetch calendars.json`);
                 calendarConfigs = await res.json();
             } catch (err) {
